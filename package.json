@@ -1,7 +1,29 @@
 {
   "name": "besiktas-fikstur",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "Beşiktaş JK Canlı Maç Takvimi, Fikstür ve Takvim Senkronizasyon Platformu",
+  "homepage": "https://bjk.8080.tr",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/odininkankasi/besiktas-fikstur.git"
+  },
+  "bugs": {
+    "url": "https://github.com/odininkankasi/besiktas-fikstur/issues"
+  },
+  "keywords": [
+    "besiktas",
+    "bjk",
+    "fikstur",
+    "takvim",
+    "superlig",
+    "uefa",
+    "nextjs",
+    "react",
+    "typescript",
+    "pwa"
+  ],
+  "author": "Odin'in Kankası",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +31,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "lucide-react": "^1.37.0",
     "next": "16.3.3",
     "react": "19.2.8",
     "react-dom": "19.2.8"
