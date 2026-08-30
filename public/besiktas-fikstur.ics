@@ -1,0 +1,1030 @@
+BEGIN:VCALENDAR
+METHOD:PUBLISH
+PRODID:-//Besiktas JK Fikstur//TR
+REFRESH-INTERVAL;VALUE=DURATION:PT6H
+VERSION:2.0
+X-PUBLISHED-TTL:PT6H
+X-WR-CALDESC:Beşiktaş JK Canlı Maç Takvimi (bjk.8080.tr)
+X-WR-CALNAME:Beşiktaş Fikstürü (bjk.8080.tr)
+X-WR-TIMEZONE:UTC
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5788580\nEuropa League Qualificat
+ ion
+DTEND:20260723T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260723T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tüpraş Stadyumu\, Dolmabahçe Gazhane Caddesi\, Beşiktaş\, İstanbu
+ l\, TUR
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - FC Midtjylland  (1-0)
+TRANSP:TRANSPARENT
+UID:5788580-10188@fotmob.com
+URL:https://www.fotmob.com/match/5788580
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - FC Midtjylland starting in 15 minutes. Notificat
+ ions can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - FC Midtjylland starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5788589\nEuropa League Qualificat
+ ion
+DTEND:20260730T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260730T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:MCH Arena\, Kaj Zartows Vej 5\, Herning\, DEN
+SEQUENCE:0
+SUMMARY:⚽️ FC Midtjylland - Beşiktaş  (0-2)
+TRANSP:TRANSPARENT
+UID:5788589-10188@fotmob.com
+URL:https://www.fotmob.com/match/5788589
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ FC Midtjylland - Beşiktaş starting in 15 minutes. Notificat
+ ions can be turned off in calendar settings
+SUMMARY:⚽️ FC Midtjylland - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5955030\nEuropa League Qualificat
+ ion
+DTEND:20260806T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260806T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:FINEP Arena\, Úprkova 473/1\, Hradec Králové\, CZE
+SEQUENCE:0
+SUMMARY:⚽️ Hradec Králové - Beşiktaş  (0-1)
+TRANSP:TRANSPARENT
+UID:5955030-10188@fotmob.com
+URL:https://www.fotmob.com/match/5955030
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Hradec Králové - Beşiktaş starting in 15 minutes. Notificat
+ ions can be turned off in calendar settings
+SUMMARY:⚽️ Hradec Králové - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5955031\nEuropa League Qualificat
+ ion
+DTEND:20260813T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260813T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tüpraş Stadyumu\, Dolmabahçe Gazhane Caddesi\, Beşiktaş\, İstanbu
+ l\, TUR
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Hradec Králové  (1-0)
+TRANSP:TRANSPARENT
+UID:5955031-10188@fotmob.com
+URL:https://www.fotmob.com/match/5955031
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Hradec Králové starting in 15 minutes. Notificat
+ ions can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Hradec Králové starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904711\nSuper Lig
+DTEND:20260816T203000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260816T183000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tüpraş Stadyumu\, Dolmabahçe Gazhane Caddesi\, Beşiktaş\, İstanbu
+ l\, TUR
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Eyüpspor  (1-0)
+TRANSP:TRANSPARENT
+UID:5904711-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904711
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Eyüpspor starting in 15 minutes. Notifications c
+ an be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Eyüpspor starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5987964\nEuropa League Qualificat
+ ion
+DTEND:20260820T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260820T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tüpraş Stadyumu\, Dolmabahçe Gazhane Caddesi\, Beşiktaş\, İstanbu
+ l\, TUR
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - FK Kauno Žalgiris  (3-0)
+TRANSP:TRANSPARENT
+UID:5987964-10188@fotmob.com
+URL:https://www.fotmob.com/match/5987964
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - FK Kauno Žalgiris starting in 15 minutes. Notifi
+ cations can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - FK Kauno Žalgiris starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904715\nSuper Lig
+DTEND:20260823T203000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260823T183000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:GAIN Park Stadium\, Sarıkadıoğlu Caddesi\, Oba\, Obaköy\, Alanya\
+ , Antalya\, TUR
+SEQUENCE:0
+SUMMARY:⚽️ Alanyaspor - Beşiktaş  (1-0)
+TRANSP:TRANSPARENT
+UID:5904715-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904715
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Alanyaspor - Beşiktaş starting in 15 minutes. Notifications
+  can be turned off in calendar settings
+SUMMARY:⚽️ Alanyaspor - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5987976\nEuropa League Qualificat
+ ion
+DTEND:20260827T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260827T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:S. Dariaus ir S. Girėno stadionas\, Ąžuolyno gatvė\, Kaunas\, LTU
+SEQUENCE:0
+SUMMARY:⚽️ FK Kauno Žalgiris - Beşiktaş  (1-0)
+TRANSP:TRANSPARENT
+UID:5987976-10188@fotmob.com
+URL:https://www.fotmob.com/match/5987976
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ FK Kauno Žalgiris - Beşiktaş starting in 15 minutes. Notifi
+ cations can be turned off in calendar settings
+SUMMARY:⚽️ FK Kauno Žalgiris - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904729\nSuper Lig
+DTEND:20260831T203000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260831T183000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tüpraş Stadyumu\, Dolmabahçe Gazhane Caddesi\, Beşiktaş\, İstanbu
+ l\, TUR
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Çorum FK
+TRANSP:TRANSPARENT
+UID:5904729-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904729
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Çorum FK starting in 15 minutes. Notifications c
+ an be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Çorum FK starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904737\nSuper Lig
+DTEND:20260906T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260906T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Chobani Stadyumu Fenerbahce Sukru Saracoglu Spor Kompleksi
+SEQUENCE:0
+SUMMARY:⚽️ Fenerbahçe - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904737-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904737
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Fenerbahçe - Beşiktaş starting in 15 minutes. Notifications
+  can be turned off in calendar settings
+SUMMARY:⚽️ Fenerbahçe - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904747\nSuper Lig
+DTEND:20260913T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260913T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Erzurumspor FK
+TRANSP:TRANSPARENT
+UID:5904747-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904747
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Erzurumspor FK starting in 15 minutes. Notificat
+ ions can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Erzurumspor FK starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/6112354\nEuropa League
+DTEND:20260917T210000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260917T190000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Marseille
+TRANSP:TRANSPARENT
+UID:6112354-10188@fotmob.com
+URL:https://www.fotmob.com/match/6112354
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Marseille starting in 15 minutes. Notifications 
+ can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Marseille starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904752\nSuper Lig
+DTEND:20260920T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20260920T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Seyrantepe Diski Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Amed Sportif - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904752-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904752
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Amed Sportif - Beşiktaş starting in 15 minutes. Notificatio
+ ns can be turned off in calendar settings
+SUMMARY:⚽️ Amed Sportif - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904765\nSuper Lig
+DTEND:20261011T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261011T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Kocaelispor
+TRANSP:TRANSPARENT
+UID:5904765-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904765
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Kocaelispor starting in 15 minutes. Notification
+ s can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Kocaelispor starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/6112353\nEuropa League
+DTEND:20261015T210000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261015T190000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:SNP Arena
+SEQUENCE:0
+SUMMARY:⚽️ Hoffenheim - Beşiktaş
+TRANSP:TRANSPARENT
+UID:6112353-10188@fotmob.com
+URL:https://www.fotmob.com/match/6112353
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Hoffenheim - Beşiktaş starting in 15 minutes. Notifications
+  can be turned off in calendar settings
+SUMMARY:⚽️ Hoffenheim - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904767\nSuper Lig
+DTEND:20261018T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261018T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Papara Park
+SEQUENCE:0
+SUMMARY:⚽️ Trabzonspor - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904767-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904767
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Trabzonspor - Beşiktaş starting in 15 minutes. Notification
+ s can be turned off in calendar settings
+SUMMARY:⚽️ Trabzonspor - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/6112356\nEuropa League
+DTEND:20261022T210000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261022T190000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Crystal Palace
+TRANSP:TRANSPARENT
+UID:6112356-10188@fotmob.com
+URL:https://www.fotmob.com/match/6112356
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Crystal Palace starting in 15 minutes. Notificat
+ ions can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Crystal Palace starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904783\nSuper Lig
+DTEND:20261025T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261025T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Başakşehir
+TRANSP:TRANSPARENT
+UID:5904783-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904783
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Başakşehir starting in 15 minutes. Notifications
+  can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Başakşehir starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904786\nSuper Lig
+DTEND:20261101T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261101T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Recep Tayyip Erdogan Stadi
+SEQUENCE:0
+SUMMARY:⚽️ Kasımpaşa - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904786-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904786
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Kasımpaşa - Beşiktaş starting in 15 minutes. Notifications 
+ can be turned off in calendar settings
+SUMMARY:⚽️ Kasımpaşa - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/6112301\nEuropa League
+DTEND:20261105T220000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261105T200000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Celtic Park
+SEQUENCE:0
+SUMMARY:⚽️ Celtic - Beşiktaş
+TRANSP:TRANSPARENT
+UID:6112301-10188@fotmob.com
+URL:https://www.fotmob.com/match/6112301
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Celtic - Beşiktaş starting in 15 minutes. Notifications can
+  be turned off in calendar settings
+SUMMARY:⚽️ Celtic - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904801\nSuper Lig
+DTEND:20261108T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261108T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Gençlerbirliği
+TRANSP:TRANSPARENT
+UID:5904801-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904801
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Gençlerbirliği starting in 15 minutes. Notificat
+ ions can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Gençlerbirliği starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904808\nSuper Lig
+DTEND:20261122T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261122T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Konya Buyuksehir Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Konyaspor - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904808-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904808
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Konyaspor - Beşiktaş starting in 15 minutes. Notifications 
+ can be turned off in calendar settings
+SUMMARY:⚽️ Konyaspor - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/6112357\nEuropa League
+DTEND:20261126T194500Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261126T174500Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Hapoel Beer Sheva
+TRANSP:TRANSPARENT
+UID:6112357-10188@fotmob.com
+URL:https://www.fotmob.com/match/6112357
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Hapoel Beer Sheva starting in 15 minutes. Notifi
+ cations can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Hapoel Beer Sheva starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904819\nSuper Lig
+DTEND:20261129T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261129T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Galatasaray
+TRANSP:TRANSPARENT
+UID:5904819-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904819
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Galatasaray starting in 15 minutes. Notification
+ s can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Galatasaray starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904828\nSuper Lig
+DTEND:20261206T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261206T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Samsunspor
+TRANSP:TRANSPARENT
+UID:5904828-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904828
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Samsunspor starting in 15 minutes. Notifications
+  can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Samsunspor starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/6112245\nEuropa League
+DTEND:20261210T220000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261210T200000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:BayArena
+SEQUENCE:0
+SUMMARY:⚽️ Bayer Leverkusen - Beşiktaş
+TRANSP:TRANSPARENT
+UID:6112245-10188@fotmob.com
+URL:https://www.fotmob.com/match/6112245
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Bayer Leverkusen - Beşiktaş starting in 15 minutes. Notific
+ ations can be turned off in calendar settings
+SUMMARY:⚽️ Bayer Leverkusen - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904830\nSuper Lig
+DTEND:20261213T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261213T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Gaziantep Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Gaziantep FK - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904830-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904830
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Gaziantep FK - Beşiktaş starting in 15 minutes. Notificatio
+ ns can be turned off in calendar settings
+SUMMARY:⚽️ Gaziantep FK - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904846\nSuper Lig
+DTEND:20261220T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20261220T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Rizespor
+TRANSP:TRANSPARENT
+UID:5904846-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904846
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Rizespor starting in 15 minutes. Notifications c
+ an be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Rizespor starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904852\nSuper Lig
+DTEND:20270117T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270117T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Gursel Aksel Stadium
+SEQUENCE:0
+SUMMARY:⚽️ Göztepe - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904852-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904852
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Göztepe - Beşiktaş starting in 15 minutes. Notifications ca
+ n be turned off in calendar settings
+SUMMARY:⚽️ Göztepe - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/6112355\nEuropa League
+DTEND:20270121T194500Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270121T174500Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Union St.Gilloise
+TRANSP:TRANSPARENT
+UID:6112355-10188@fotmob.com
+URL:https://www.fotmob.com/match/6112355
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Union St.Gilloise starting in 15 minutes. Notifi
+ cations can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Union St.Gilloise starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904864\nSuper Lig
+DTEND:20270124T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270124T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Recep Tayyip Erdogan Stadi
+SEQUENCE:0
+SUMMARY:⚽️ Eyüpspor - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904864-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904864
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Eyüpspor - Beşiktaş starting in 15 minutes. Notifications c
+ an be turned off in calendar settings
+SUMMARY:⚽️ Eyüpspor - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/6112345\nEuropa League
+DTEND:20270128T220000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270128T200000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Neo GSP Stadium
+SEQUENCE:0
+SUMMARY:⚽️ Omonia Nicosia - Beşiktaş
+TRANSP:TRANSPARENT
+UID:6112345-10188@fotmob.com
+URL:https://www.fotmob.com/match/6112345
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Omonia Nicosia - Beşiktaş starting in 15 minutes. Notificat
+ ions can be turned off in calendar settings
+SUMMARY:⚽️ Omonia Nicosia - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904868\nSuper Lig
+DTEND:20270131T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270131T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Alanyaspor
+TRANSP:TRANSPARENT
+UID:5904868-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904868
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Alanyaspor starting in 15 minutes. Notifications
+  can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Alanyaspor starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904882\nSuper Lig
+DTEND:20270207T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270207T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Turhan Kiliccioglu Stadi
+SEQUENCE:0
+SUMMARY:⚽️ Çorum FK - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904882-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904882
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Çorum FK - Beşiktaş starting in 15 minutes. Notifications c
+ an be turned off in calendar settings
+SUMMARY:⚽️ Çorum FK - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904890\nSuper Lig
+DTEND:20270214T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270214T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Fenerbahçe
+TRANSP:TRANSPARENT
+UID:5904890-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904890
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Fenerbahçe starting in 15 minutes. Notifications
+  can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Fenerbahçe starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904900\nSuper Lig
+DTEND:20270221T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270221T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Kazim Karabekir Stadium
+SEQUENCE:0
+SUMMARY:⚽️ Erzurumspor FK - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904900-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904900
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Erzurumspor FK - Beşiktaş starting in 15 minutes. Notificat
+ ions can be turned off in calendar settings
+SUMMARY:⚽️ Erzurumspor FK - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904905\nSuper Lig
+DTEND:20270228T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270228T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Amed Sportif
+TRANSP:TRANSPARENT
+UID:5904905-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904905
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Amed Sportif starting in 15 minutes. Notificatio
+ ns can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Amed Sportif starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904918\nSuper Lig
+DTEND:20270307T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270307T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Kocaeli Stadium
+SEQUENCE:0
+SUMMARY:⚽️ Kocaelispor - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904918-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904918
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Kocaelispor - Beşiktaş starting in 15 minutes. Notification
+ s can be turned off in calendar settings
+SUMMARY:⚽️ Kocaelispor - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904920\nSuper Lig
+DTEND:20270314T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270314T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Trabzonspor
+TRANSP:TRANSPARENT
+UID:5904920-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904920
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Trabzonspor starting in 15 minutes. Notification
+ s can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Trabzonspor starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904936\nSuper Lig
+DTEND:20270321T200000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270321T180000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Basaksehir Fatih Terim Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Başakşehir - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904936-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904936
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Başakşehir - Beşiktaş starting in 15 minutes. Notifications
+  can be turned off in calendar settings
+SUMMARY:⚽️ Başakşehir - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904939\nSuper Lig
+DTEND:20270404T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270404T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Kasımpaşa
+TRANSP:TRANSPARENT
+UID:5904939-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904939
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Kasımpaşa starting in 15 minutes. Notifications 
+ can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Kasımpaşa starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904954\nSuper Lig
+DTEND:20270411T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270411T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Eryaman Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Gençlerbirliği - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904954-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904954
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Gençlerbirliği - Beşiktaş starting in 15 minutes. Notificat
+ ions can be turned off in calendar settings
+SUMMARY:⚽️ Gençlerbirliği - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904961\nSuper Lig
+DTEND:20270418T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270418T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Konyaspor
+TRANSP:TRANSPARENT
+UID:5904961-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904961
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Konyaspor starting in 15 minutes. Notifications 
+ can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Konyaspor starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904972\nSuper Lig
+DTEND:20270425T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270425T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Rams Global Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Galatasaray - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904972-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904972
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Galatasaray - Beşiktaş starting in 15 minutes. Notification
+ s can be turned off in calendar settings
+SUMMARY:⚽️ Galatasaray - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904981\nSuper Lig
+DTEND:20270502T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270502T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Samsun Yeni 19 Mayis Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Samsunspor - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904981-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904981
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Samsunspor - Beşiktaş starting in 15 minutes. Notifications
+  can be turned off in calendar settings
+SUMMARY:⚽️ Samsunspor - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904983\nSuper Lig
+DTEND:20270509T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270509T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Gaziantep FK
+TRANSP:TRANSPARENT
+UID:5904983-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904983
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Gaziantep FK starting in 15 minutes. Notificatio
+ ns can be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Gaziantep FK starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5904999\nSuper Lig
+DTEND:20270516T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270516T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Caykur Didi Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Rizespor - Beşiktaş
+TRANSP:TRANSPARENT
+UID:5904999-10188@fotmob.com
+URL:https://www.fotmob.com/match/5904999
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Rizespor - Beşiktaş starting in 15 minutes. Notifications c
+ an be turned off in calendar settings
+SUMMARY:⚽️ Rizespor - Beşiktaş starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+CLASS:PUBLIC
+DESCRIPTION:https://www.fotmob.com/match/5905005\nSuper Lig
+DTEND:20270523T190000Z
+DTSTAMP:20260830T145120Z
+DTSTART:20270523T170000Z
+LAST-MODIFIED:20260830T145120Z
+LOCATION:Tupras Stadyumu
+SEQUENCE:0
+SUMMARY:⚽️ Beşiktaş - Göztepe
+TRANSP:TRANSPARENT
+UID:5905005-10188@fotmob.com
+URL:https://www.fotmob.com/match/5905005
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:⚽️ Beşiktaş - Göztepe starting in 15 minutes. Notifications ca
+ n be turned off in calendar settings
+SUMMARY:⚽️ Beşiktaş - Göztepe starting in 15 minutes
+TRIGGER:-PT15M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

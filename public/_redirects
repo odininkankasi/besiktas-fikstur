@@ -1,0 +1,4 @@
+# Cloudflare Pages 301 Canonical Yönlendirmeleri
+https://www.bjk.8080.tr/* https://bjk.8080.tr/:splat 301!
+http://www.bjk.8080.tr/* https://bjk.8080.tr/:splat 301!
+http://bjk.8080.tr/* https://bjk.8080.tr/:splat 301!

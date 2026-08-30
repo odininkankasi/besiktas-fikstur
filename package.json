@@ -25,8 +25,9 @@
   "author": "Odin'in Kankası",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build --webpack && node -e \"const fs=require('fs'); try { fs.rmSync('.next/cache', { recursive: true, force: true }); } catch(e){}\"",
+    "dev": "node scripts/generate-static-data.js && next dev",
+    "prebuild": "node scripts/generate-static-data.js",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },

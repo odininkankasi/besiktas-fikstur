@@ -35,13 +35,13 @@ export default function Home() {
   const loadData = async () => {
     setLoading(true);
     try {
-      // Fikstür ve Puan Durumunu eşzamanlı çek
+      // Statik JSON veya API'den eşzamanlı çek
       const [fixturesRes, standingsRes] = await Promise.all([
-        fetch('/api/fixtures'),
-        fetch('/api/standings')
+        fetch('/bjk-fixtures.json').catch(() => fetch('/api/fixtures')),
+        fetch('/bjk-standings.json').catch(() => fetch('/api/standings'))
       ]);
 
-      if (fixturesRes.ok) {
+      if (fixturesRes && fixturesRes.ok) {
         const fJson = await fixturesRes.json();
         if (fJson.success) {
           setFixtures(fJson.fixtures || fJson.matches || []);
@@ -50,7 +50,7 @@ export default function Home() {
         }
       }
 
-      if (standingsRes.ok) {
+      if (standingsRes && standingsRes.ok) {
         const sJson = await standingsRes.json();
         if (sJson.success && sJson.standings) {
           setStandings(sJson.standings);
@@ -283,8 +283,8 @@ export default function Home() {
       <CalendarModal
         isOpen={isCalendarModalOpen}
         onClose={() => setIsCalendarModalOpen(false)}
-        webcalUrl="/api/calendar.ics"
-        icsUrl="/api/calendar.ics"
+        webcalUrl="webcal://bjk.8080.tr/besiktas-fikstur.ics"
+        icsUrl="/besiktas-fikstur.ics"
       />
 
       {/* Yukarı Çık Yüzen Butonu */}
