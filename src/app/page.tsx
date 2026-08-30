@@ -9,7 +9,7 @@ import { StandingsModal, StandingsData } from '@/components/StandingsModal';
 import { CalendarModal } from '@/components/CalendarModal';
 import { ScrollToTopButton } from '@/components/ScrollToTopButton';
 import { Match, SeasonStats } from '@/lib/types';
-import { Search, Trophy, CheckCircle2, Flame } from 'lucide-react';
+import { Search, Trophy, CheckCircle2, Flame, ChevronRight } from 'lucide-react';
 
 export default function Home() {
   const [fixtures, setFixtures] = useState<Match[]>([]);
@@ -187,9 +187,6 @@ export default function Home() {
       {/* Üst Başlık */}
       <Header
         onOpenCalendarModal={() => setIsCalendarModalOpen(true)}
-        onOpenStandingsModal={handleOpenStandings}
-        onRefresh={loadData}
-        isLoading={loading}
       />
 
       <main className="flex-1 max-w-5xl mx-auto px-4 py-6 w-full space-y-6">
@@ -199,13 +196,43 @@ export default function Home() {
           onOpenCalendarModal={() => setIsCalendarModalOpen(true)}
         />
 
-        {/* 2. Sezon İstatistikleri Şeridi (FotMob Maç Verilerinden Canlı) */}
+        {/* 2. Sıradaki Maçın Hemen Altındaki Bağımsız Puan Durumu Butonu */}
+        <div className="w-full">
+          <button
+            onClick={handleOpenStandings}
+            className="w-full group p-3.5 sm:p-4 rounded-2xl bg-neutral-900/80 hover:bg-neutral-900 border border-neutral-800 hover:border-amber-500/40 transition-all flex items-center justify-between shadow-lg shadow-black/40 active:scale-[0.99]"
+          >
+            <div className="flex items-center gap-3 min-w-0">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0 group-hover:scale-105 transition-transform">
+                <Trophy className="w-4 h-4 sm:w-5 sm:h-5" />
+              </div>
+              <div className="text-left min-w-0">
+                <div className="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+                  <span>Trendyol Süper Lig Puan Durumu</span>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 font-bold hidden sm:inline">
+                    Canlı Tablo
+                  </span>
+                </div>
+                <p className="text-[11px] sm:text-xs text-neutral-400 mt-0.5 truncate">
+                  TFF resmi 18 takımlı puan cetveli ve sıralamalar
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-1.5 text-xs font-bold text-neutral-400 group-hover:text-amber-400 transition-colors shrink-0">
+              <span className="hidden sm:inline">Tabloyu Gör</span>
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+            </div>
+          </button>
+        </div>
+
+        {/* 3. Sezon İstatistikleri Şeridi (FotMob Maç Verilerinden Canlı) */}
         <SeasonStatsBanner
           stats={activeStats}
           selectedCompetitionTitle={competitionTitle}
         />
 
-        {/* 3. Filtreleme, Sekmeler ve Arama */}
+        {/* 4. Filtreleme, Sekmeler ve Arama */}
         <div className="space-y-3 pt-1">
           {/* Ana Sekmeler (Gelecek, Oynanan, Tümü) & Arama Kutusu */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
@@ -309,7 +336,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 4. Fikstür Listesi */}
+        {/* 5. Fikstür Listesi */}
         <div className="space-y-3 pt-1">
           {loading ? (
             <div className="py-20 flex flex-col items-center justify-center text-center">
