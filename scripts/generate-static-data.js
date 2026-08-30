@@ -5,6 +5,19 @@ const https = require('https');
 const FOTMOB_ICS_URL = 'https://pub.fotmob.com/prod/pub/api/v2/calendar/team/10188.ics';
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 
+// .env.local dosyasından COLLECT_API_KEY oku
+function getCollectApiKey() {
+  try {
+    const envPath = path.join(__dirname, '..', '.env.local');
+    if (fs.existsSync(envPath)) {
+      const content = fs.readFileSync(envPath, 'utf-8');
+      const match = content.match(/COLLECT_API_KEY=([^\r\n]+)/);
+      if (match) return match[1].trim();
+    }
+  } catch (e) {}
+  return process.env.COLLECT_API_KEY || '56ouwZQF50T1dNXJXi4PF8:638xHT2v02u6BmASDlIn48';
+}
+
 function fetchText(url) {
   return new Promise((resolve, reject) => {
     https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
@@ -12,6 +25,33 @@ function fetchText(url) {
       res.on('data', (chunk) => data += chunk);
       res.on('end', () => resolve(data));
     }).on('error', reject);
+  });
+}
+
+function fetchJsonFromCollectAPI(pathStr, apiKey) {
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: 'api.collectapi.com',
+      path: pathStr,
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `apikey ${apiKey}`
+      }
+    };
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', (chunk) => data += chunk);
+      res.on('end', () => {
+        try {
+          resolve(JSON.parse(data));
+        } catch (e) {
+          reject(e);
+        }
+      });
+    });
+    req.on('error', reject);
+    req.end();
   });
 }
 
@@ -62,7 +102,7 @@ function parseICS(rawICS) {
       continue;
     }
 
-    if (inEvent && !inAlarm) {
+    if (line === 'IN-EVENT' || inEvent) {
       if (line.startsWith('UID:')) currentEvent.uid = line.substring(4);
       else if (line.startsWith('SUMMARY:')) currentEvent.summary = line.substring(8);
       else if (line.startsWith('DTSTART:')) currentEvent.dtstart = line.substring(8);
@@ -79,7 +119,6 @@ function parseICS(rawICS) {
 function processEvent(ev, index) {
   let rawSummary = (ev.summary || '').replace(/⚽️/g, '').trim();
 
-  // Skoru yakala (Örn: "Beşiktaş - FC Midtjylland (1-0)")
   let score = undefined;
   const scoreMatch = rawSummary.match(/\(([0-9]+\s*-\s*[0-9]+)\)/);
   if (scoreMatch) {
@@ -98,64 +137,45 @@ function processEvent(ev, index) {
 
   const dtstart = ev.dtstart || '';
   const cleanDt = dtstart.replace(/[^0-9T]/g, '');
-  if (cleanDt.length < 8) return null;
+  let startTime = '';
 
-  const year = cleanDt.substring(0, 4);
-  const month = cleanDt.substring(4, 6);
-  const day = cleanDt.substring(6, 8);
-  const hours = cleanDt.substring(9, 11) || '00';
-  const minutes = cleanDt.substring(11, 13) || '00';
-  const startTime = `${year}-${month}-${day}T${hours}:${minutes}:00Z`;
-
-  const matchTimeMs = new Date(startTime).getTime();
-  const now = Date.now();
-  const isFinished = !!score || matchTimeMs < now - 1000 * 60 * 120;
-
-  let locationRaw = (ev.location || '')
-    .replace(/\\,/g, ',')
-    .replace(/\\n/g, ' ')
-    .replace(/\\;/g, ';')
-    .trim();
-
-  let stadiumName = isBjkHome ? 'Tüpraş Stadyumu' : 'Deplasman';
-  let city = isBjkHome ? 'İstanbul' : 'Deplasman';
-
-  if (locationRaw) {
-    const locParts = locationRaw.split(',').map(s => s.trim()).filter(Boolean);
-    if (locParts.length > 0) {
-      stadiumName = locParts[0];
-      if (locParts.length > 1) {
-        city = locParts[locParts.length - 2] || locParts[locParts.length - 1];
-      }
-    }
+  if (cleanDt.length >= 15) {
+    const year = cleanDt.substring(0, 4);
+    const month = cleanDt.substring(4, 6);
+    const day = cleanDt.substring(6, 8);
+    const hour = cleanDt.substring(9, 11);
+    const minute = cleanDt.substring(11, 13);
+    const second = cleanDt.substring(13, 15);
+    startTime = `${year}-${month}-${day}T${hour}:${minute}:${second}.000Z`;
+  } else {
+    startTime = new Date().toISOString();
   }
 
-  const desc = (ev.description || '').toLowerCase();
-  const summaryLower = rawSummary.toLowerCase();
+  const desc = ev.description || '';
   let competition = 'Trendyol Süper Lig';
-  let competitionCode = 'super-lig';
+  let competitionId = 'super-lig';
 
-  if (desc.includes('europa') || desc.includes('uefa') || desc.includes('avrupa') || summaryLower.includes('europa') || summaryLower.includes('uefa')) {
+  if (desc.toLowerCase().includes('europa') || rawSummary.toLowerCase().includes('europa') || desc.toLowerCase().includes('uefa') || rawSummary.toLowerCase().includes('uefa') || desc.toLowerCase().includes('avrupa') || rawSummary.toLowerCase().includes('avrupa') || desc.toLowerCase().includes('qualification') || desc.toLowerCase().includes('playoff') || desc.toLowerCase().includes('play-off')) {
     competition = 'UEFA Avrupa Ligi';
-    competitionCode = 'europe';
-  } else if (desc.includes('turkiye kupasi') || desc.includes('ziraat') || desc.includes('cup') || desc.includes('kupa')) {
+    competitionId = 'europe';
+  } else if (desc.toLowerCase().includes('kupa') || rawSummary.toLowerCase().includes('kupa') || desc.toLowerCase().includes('cup')) {
     competition = 'Ziraat Türkiye Kupası';
-    competitionCode = 'cup';
-  } else if (desc.includes('friendly') || desc.includes('hazırlık')) {
-    competition = 'Hazırlık Maçı';
-    competitionCode = 'super-lig';
+    competitionId = 'turkiye-kupasi';
   }
+
+  const isFinished = !!score;
+  const matchDate = new Date(startTime);
+  const now = new Date();
 
   return {
-    id: ev.uid || `match-${index}-${startTime}`,
+    id: ev.uid || `bjk-match-${index}`,
     homeTeam,
     awayTeam,
     bjkIsHome: isBjkHome,
     startTime,
-    stadiumName,
-    city,
     competition,
-    competitionCode,
+    competitionId,
+    location: ev.location || 'Tüpraş Stadyumu',
     score,
     isFinished
   };
@@ -163,9 +183,6 @@ function processEvent(ev, index) {
 
 async function main() {
   console.log('🔄 Statik veri dosyaları oluşturuluyor...');
-  if (!fs.existsSync(PUBLIC_DIR)) {
-    fs.mkdirSync(PUBLIC_DIR, { recursive: true });
-  }
 
   try {
     const rawIcs = await fetchText(FOTMOB_ICS_URL);
@@ -230,7 +247,49 @@ async function main() {
       .replace(/PRODID:-\/\/FOTMOB\/\/FOTMOB 1.0\/\/EN/g, 'PRODID:-//Besiktas JK Fikstur//TR');
     fs.writeFileSync(path.join(PUBLIC_DIR, 'besiktas-fikstur.ics'), customizedIcs);
 
-    // Puan Durumu
+    // 2. Canlı CollectAPI Üzerinden Süper Lig Puan Durumu Çekme
+    console.log('📡 CollectAPI üzerinden canlı Süper Lig puan tablosu çekiliyor...');
+    const apiKey = getCollectApiKey();
+    let superLigRows = [];
+    let bjkRank = 13;
+    let bjkPoints = 3;
+
+    try {
+      const apiRes = await fetchJsonFromCollectAPI('/sport/league?league=super-lig', apiKey);
+      if (Array.isArray(apiRes) && apiRes.length > 0) {
+        superLigRows = apiRes.map((item) => {
+          const rank = Number(item.rank) || 1;
+          const name = item.team || '';
+          const isBjk = name.toLowerCase().includes('beşiktaş') || name.toLowerCase().includes('besiktas');
+
+          return {
+            rank,
+            teamName: name,
+            shortName: name.substring(0, 3).toUpperCase(),
+            played: Number(item.play) || 0,
+            won: Number(item.win) || 0,
+            drawn: Number(item.draw) || 0,
+            lost: Number(item.lose) || 0,
+            goalsFor: Number(item.goalfor) || 0,
+            goalsAgainst: Number(item.goalagainst) || 0,
+            goalDiff: Number(item.goaldistance) || 0,
+            points: Number(item.point) || 0,
+            isBjk,
+            qualification: rank <= 2 ? 'champions-league' : rank <= 4 ? 'europa-league' : rank >= 16 ? 'relegation' : 'none'
+          };
+        });
+
+        const bjkFound = superLigRows.find(r => r.isBjk);
+        if (bjkFound) {
+          bjkRank = bjkFound.rank;
+          bjkPoints = bjkFound.points;
+        }
+        console.log(`✅ Canlı CollectAPI puan tablosu başarıyla alındı! Beşiktaş Sıra: ${bjkRank}, Puan: ${bjkPoints}`);
+      }
+    } catch (err) {
+      console.error('CollectAPI canlı çekim hatası:', err.message);
+    }
+
     const standingsPayload = {
       success: true,
       lastUpdated: new Date().toISOString(),
@@ -238,35 +297,15 @@ async function main() {
         'super-lig': {
           leagueId: 'super-lig',
           leagueName: 'Trendyol Süper Lig',
-          season: '2024/2025',
-          bjkRank: 3,
-          bjkPoints: 9,
-          rows: [
-            { rank: 1, teamName: 'Galatasaray', shortName: 'GS', played: 4, won: 4, drawn: 0, lost: 0, goalsFor: 14, goalsAgainst: 3, goalDiff: 11, points: 12, isBjk: false, qualification: 'champions-league' },
-            { rank: 2, teamName: 'Fenerbahçe', shortName: 'FB', played: 4, won: 3, drawn: 1, lost: 0, goalsFor: 11, goalsAgainst: 2, goalDiff: 9, points: 10, isBjk: false, qualification: 'champions-league' },
-            { rank: 3, teamName: 'Beşiktaş', shortName: 'BJK', played: 3, won: 3, drawn: 0, lost: 0, goalsFor: 8, goalsAgainst: 2, goalDiff: 6, points: 9, isBjk: true, qualification: 'europa-league' },
-            { rank: 4, teamName: 'Samsunspor', shortName: 'SAM', played: 4, won: 3, drawn: 0, lost: 1, goalsFor: 6, goalsAgainst: 3, goalDiff: 3, points: 9, isBjk: false, qualification: 'europa-league' },
-            { rank: 5, teamName: 'Eyüpspor', shortName: 'EYÜP', played: 4, won: 2, drawn: 2, lost: 0, goalsFor: 6, goalsAgainst: 2, goalDiff: 4, points: 8, isBjk: false, qualification: 'none' },
-            { rank: 6, teamName: 'Başakşehir', shortName: 'İBFK', played: 3, won: 2, drawn: 1, lost: 0, goalsFor: 7, goalsAgainst: 4, goalDiff: 3, points: 7, isBjk: false, qualification: 'none' },
-            { rank: 7, teamName: 'Göztepe', shortName: 'GÖZ', played: 4, won: 1, drawn: 3, lost: 0, goalsFor: 5, goalsAgainst: 3, goalDiff: 2, points: 6, isBjk: false, qualification: 'none' },
-            { rank: 8, teamName: 'Sivasspor', shortName: 'SİV', played: 4, won: 1, drawn: 1, lost: 2, goalsFor: 3, goalsAgainst: 4, goalDiff: -1, points: 4, isBjk: false, qualification: 'none' },
-            { rank: 9, teamName: 'Antalyaspor', shortName: 'ANT', played: 4, won: 1, drawn: 1, lost: 2, goalsFor: 5, goalsAgainst: 9, goalDiff: -4, points: 4, isBjk: false, qualification: 'none' },
-            { rank: 10, teamName: 'Çaykur Rizespor', shortName: 'RİZE', played: 4, won: 1, drawn: 1, lost: 2, goalsFor: 3, goalsAgainst: 8, goalDiff: -5, points: 4, isBjk: false, qualification: 'none' },
-            { rank: 11, teamName: 'Kasımpaşa', shortName: 'KAS', played: 4, won: 0, drawn: 3, lost: 1, goalsFor: 5, goalsAgainst: 6, goalDiff: -1, points: 3, isBjk: false, qualification: 'none' },
-            { rank: 12, teamName: 'Konyaspor', shortName: 'KON', played: 4, won: 1, drawn: 0, lost: 3, goalsFor: 4, goalsAgainst: 7, goalDiff: -3, points: 3, isBjk: false, qualification: 'none' },
-            { rank: 13, teamName: 'Alanyaspor', shortName: 'ALAN', played: 4, won: 0, drawn: 2, lost: 2, goalsFor: 3, goalsAgainst: 8, goalDiff: -5, points: 2, isBjk: false, qualification: 'none' },
-            { rank: 14, teamName: 'Gaziantep FK', shortName: 'GFK', played: 3, won: 1, drawn: 0, lost: 2, goalsFor: 1, goalsAgainst: 2, goalDiff: -1, points: 3, isBjk: false, qualification: 'none' },
-            { rank: 15, teamName: 'Trabzonspor', shortName: 'TS', played: 2, won: 0, drawn: 2, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDiff: 0, points: 2, isBjk: false, qualification: 'none' },
-            { rank: 16, teamName: 'Kayserispor', shortName: 'KAY', played: 2, won: 0, drawn: 1, lost: 1, goalsFor: 1, goalsAgainst: 2, goalDiff: -1, points: 1, isBjk: false, qualification: 'relegation' },
-            { rank: 17, teamName: 'Bodrum FK', shortName: 'BOD', played: 4, won: 1, drawn: 0, lost: 3, goalsFor: 4, goalsAgainst: 8, goalDiff: -4, points: 3, isBjk: false, qualification: 'relegation' },
-            { rank: 18, teamName: 'Hatayspor', shortName: 'HAT', played: 4, won: 0, drawn: 1, lost: 3, goalsFor: 4, goalsAgainst: 8, goalDiff: -4, points: 1, isBjk: false, qualification: 'relegation' },
-            { rank: 19, teamName: 'Adana Demirspor', shortName: 'ADS', played: 4, won: 0, drawn: 1, lost: 3, goalsFor: 3, goalsAgainst: 9, goalDiff: -6, points: 1, isBjk: false, qualification: 'relegation' }
-          ]
+          season: '2026/2027',
+          bjkRank,
+          bjkPoints,
+          rows: superLigRows
         },
         'europa-league': {
           leagueId: 'europa-league',
           leagueName: 'UEFA Avrupa Ligi (Lig Aşaması)',
-          season: '2024/2025',
+          season: '2026/2027',
           bjkRank: 1,
           bjkPoints: 0,
           rows: [
@@ -277,9 +316,10 @@ async function main() {
         }
       }
     };
+
     fs.writeFileSync(path.join(PUBLIC_DIR, 'bjk-standings.json'), JSON.stringify(standingsPayload, null, 2));
 
-    console.log('✅ Statik dosyalar başarıyla üretildi. Toplam Maç:', matches.length, 'Oynanan:', totalPlayed, 'Galibiyet:', wins, 'Atılan Gol:', goalsScored);
+    console.log('✅ Tüm statik ve canlı API verileri başarıyla üretildi!');
   } catch (err) {
     console.error('Hata:', err);
   }
