@@ -20,6 +20,10 @@ const HeroLogoView: React.FC<{ badge: TeamBadge; teamName: string }> = ({ badge,
         <img
           src={badge.logoUrl}
           alt={teamName}
+          width={96}
+          height={96}
+          loading="eager"
+          decoding="async"
           onError={() => setImgError(true)}
           className="w-full h-full object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
         />

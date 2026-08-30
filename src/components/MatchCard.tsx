@@ -23,9 +23,12 @@ const TeamLogoView: React.FC<{ badge: TeamBadge; teamName: string; size?: string
         <img
           src={badge.logoUrl}
           alt={teamName}
+          width={44}
+          height={44}
           onError={() => setImgError(true)}
           className="w-full h-full object-contain drop-shadow"
           loading="lazy"
+          decoding="async"
         />
       </div>
     );
