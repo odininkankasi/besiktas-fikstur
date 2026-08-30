@@ -1,23 +1,21 @@
 'use client';
 
 import React from 'react';
-import { LeagueStandings } from '@/lib/types';
+import { SeasonStats } from '@/lib/types';
 import { CheckCircle2, MinusCircle, XCircle, Activity } from 'lucide-react';
 
 interface SeasonStatsBannerProps {
-  superLig: LeagueStandings | null;
+  stats: SeasonStats | null;
+  selectedCompetitionTitle?: string;
 }
 
-export const SeasonStatsBanner: React.FC<SeasonStatsBannerProps> = ({ superLig }) => {
-  const bjk = superLig?.rows.find(r => r.isBjk);
+export const SeasonStatsBanner: React.FC<SeasonStatsBannerProps> = ({
+  stats,
+  selectedCompetitionTitle = '2026/2027 Sezonu Genel Performansı'
+}) => {
+  if (!stats) return null;
 
-  const played = bjk?.played ?? 1;
-  const wins = bjk?.won ?? 1;
-  const draws = bjk?.drawn ?? 0;
-  const losses = bjk?.lost ?? 0;
-  const goalsScored = bjk?.goalsFor ?? 2;
-  const goalsConceded = bjk?.goalsAgainst ?? 0;
-  const goalDiff = goalsScored - goalsConceded;
+  const goalDiff = stats.goalsScored - stats.goalsConceded;
   const isPositiveDiff = goalDiff >= 0;
 
   return (
@@ -27,11 +25,11 @@ export const SeasonStatsBanner: React.FC<SeasonStatsBannerProps> = ({ superLig }
         <div className="flex items-center gap-1.5 sm:gap-2">
           <Activity className="w-3.5 h-3.5 text-red-500 shrink-0" />
           <h2 className="text-[11px] sm:text-xs font-black uppercase tracking-wider text-neutral-300">
-            2026/2027 Trendyol Süper Lig Performansı
+            {selectedCompetitionTitle}
           </h2>
         </div>
-        <span className="text-[9px] sm:text-[10px] font-bold text-red-400 uppercase tracking-widest px-2 py-0.5 rounded-full bg-red-950/40 border border-red-800/40">
-          Resmi Lig Tablosu
+        <span className="text-[9px] sm:text-[10px] font-bold text-neutral-400 uppercase tracking-widest px-2 py-0.5 rounded-full bg-neutral-900 border border-neutral-800">
+          Canlı Sezon Verisi
         </span>
       </div>
 
@@ -43,7 +41,7 @@ export const SeasonStatsBanner: React.FC<SeasonStatsBannerProps> = ({ superLig }
             OYNANAN
           </span>
           <span className="text-lg sm:text-2xl font-black text-white font-mono mt-0.5">
-            {played}
+            {stats.totalPlayed}
           </span>
         </div>
 
@@ -54,7 +52,7 @@ export const SeasonStatsBanner: React.FC<SeasonStatsBannerProps> = ({ superLig }
             GALİBİYET
           </span>
           <span className="text-lg sm:text-2xl font-black text-emerald-400 font-mono mt-0.5">
-            {wins}
+            {stats.wins}
           </span>
         </div>
 
@@ -65,7 +63,7 @@ export const SeasonStatsBanner: React.FC<SeasonStatsBannerProps> = ({ superLig }
             BERABERLİK
           </span>
           <span className="text-lg sm:text-2xl font-black text-amber-400 font-mono mt-0.5">
-            {draws}
+            {stats.draws}
           </span>
         </div>
 
@@ -76,7 +74,7 @@ export const SeasonStatsBanner: React.FC<SeasonStatsBannerProps> = ({ superLig }
             MAĞLUBİYET
           </span>
           <span className="text-lg sm:text-2xl font-black text-red-500 font-mono mt-0.5">
-            {losses}
+            {stats.losses}
           </span>
         </div>
 
@@ -86,7 +84,7 @@ export const SeasonStatsBanner: React.FC<SeasonStatsBannerProps> = ({ superLig }
             ATILAN GOL
           </span>
           <span className="text-lg sm:text-2xl font-black text-white font-mono mt-0.5">
-            {goalsScored}
+            {stats.goalsScored}
           </span>
         </div>
 
@@ -96,7 +94,7 @@ export const SeasonStatsBanner: React.FC<SeasonStatsBannerProps> = ({ superLig }
             YENİLEN GOL
           </span>
           <span className="text-lg sm:text-2xl font-black text-neutral-300 font-mono mt-0.5">
-            {goalsConceded}
+            {stats.goalsConceded}
           </span>
         </div>
 

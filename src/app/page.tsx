@@ -108,6 +108,59 @@ export default function Home() {
     return counts;
   }, [fixtures]);
 
+  // Seçili Turnuvaya Göre Canlı Performans İstatistikleri Hesaplama
+  const activeStats = useMemo(() => {
+    let played = 0;
+    let wins = 0;
+    let draws = 0;
+    let losses = 0;
+    let scored = 0;
+    let conceded = 0;
+    let upcoming = 0;
+
+    fixtures.forEach((m) => {
+      // Turnuva filtresi
+      if (selectedCompetition !== 'all' && m.competitionCode !== selectedCompetition) {
+        return;
+      }
+
+      if (m.isFinished && m.score) {
+        played++;
+        const parts = m.score.split('-').map(Number);
+        const bjk = m.bjkIsHome ? parts[0] : parts[1];
+        const opp = m.bjkIsHome ? parts[1] : parts[0];
+
+        if (!isNaN(bjk) && !isNaN(opp)) {
+          scored += bjk;
+          conceded += opp;
+          if (bjk > opp) wins++;
+          else if (bjk === opp) draws++;
+          else losses++;
+        }
+      } else if (!m.isFinished) {
+        upcoming++;
+      }
+    });
+
+    return {
+      totalPlayed: played,
+      wins,
+      draws,
+      losses,
+      goalsScored: scored,
+      goalsConceded: conceded,
+      goalDifference: scored - conceded,
+      upcomingCount: upcoming
+    };
+  }, [fixtures, selectedCompetition]);
+
+  const competitionTitle = useMemo(() => {
+    if (selectedCompetition === 'super-lig') return '2026/2027 Trendyol Süper Lig Performansı';
+    if (selectedCompetition === 'europe') return '2026/2027 UEFA Avrupa Ligi Performansı';
+    if (selectedCompetition === 'cup') return '2026/2027 Ziraat Türkiye Kupası Performansı';
+    return '2026/2027 Sezonu Genel Performansı (Tüm Kulvarlar)';
+  }, [selectedCompetition]);
+
   return (
     <div className="min-h-screen flex flex-col bjk-pattern bjk-grid-overlay text-neutral-100">
       {/* Üst Başlık */}
@@ -124,8 +177,11 @@ export default function Home() {
           onOpenCalendarModal={() => setIsCalendarModalOpen(true)}
         />
 
-        {/* 2. Sezon İstatistikleri Şeridi (Resmi Süper Lig Puan Tablosu Verisi) */}
-        <SeasonStatsBanner superLig={standings['super-lig']} />
+        {/* 2. Sezon İstatistikleri Şeridi (Filtreye ve Canlı Maçlara Göre Dinamik) */}
+        <SeasonStatsBanner
+          stats={activeStats}
+          selectedCompetitionTitle={competitionTitle}
+        />
 
         {/* 3. Puan Durumu Mini Şeridi */}
         <StandingsMiniBanner
