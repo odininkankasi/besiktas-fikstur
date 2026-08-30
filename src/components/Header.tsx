@@ -1,16 +1,18 @@
 'use client';
 
 import React from 'react';
-import { Calendar, RefreshCw } from 'lucide-react';
+import { Calendar, RefreshCw, Trophy } from 'lucide-react';
 
 interface HeaderProps {
   onOpenCalendarModal: () => void;
+  onOpenStandingsModal?: () => void;
   onRefresh?: () => void;
   isLoading?: boolean;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   onOpenCalendarModal,
+  onOpenStandingsModal,
   onRefresh,
   isLoading = false
 }) => {
@@ -21,7 +23,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 w-full border-b border-neutral-800/80 bg-neutral-950/85 backdrop-blur-md transition-all">
       <div className="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Sol: Orijinal Resmi Beşiktaş Logosu & Başlık (Tıklayınca En Üste Kaydırır) */}
+        {/* Sol: Orijinal Resmi Beşiktaş Logosu & Başlık */}
         <div
           onClick={scrollToTop}
           className="flex items-center gap-3 cursor-pointer group select-none"
@@ -51,8 +53,20 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
 
-        {/* Sağ: Takvim Ekle & Yenile Butonları */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        {/* Sağ: Puan Durumu, Takvim Ekle & Yenile Butonları */}
+        <div className="flex items-center gap-2 sm:gap-2.5">
+          {onOpenStandingsModal && (
+            <button
+              onClick={onOpenStandingsModal}
+              title="Süper Lig Puan Durumu"
+              className="px-3 py-2 rounded-xl text-xs font-bold text-neutral-200 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-neutral-700 transition-all flex items-center gap-1.5 active:scale-95"
+            >
+              <Trophy className="w-3.5 h-3.5 text-amber-400" />
+              <span className="hidden sm:inline">Puan Durumu</span>
+              <span className="sm:hidden">Puan</span>
+            </button>
+          )}
+
           {onRefresh && (
             <button
               onClick={onRefresh}
@@ -60,17 +74,18 @@ export const Header: React.FC<HeaderProps> = ({
               title="Fikstürü Yenile"
               className="p-2 sm:px-3 sm:py-2 rounded-xl text-xs font-medium text-neutral-300 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 hover:border-neutral-700 transition-all flex items-center gap-1.5 disabled:opacity-50 active:scale-95"
             >
-              <RefreshCw className={`w-4 h-4 ${isLoading ? 'animate-spin text-red-500' : 'text-neutral-400'}`} />
+              <RefreshCw className={`w-3.5 h-3.5 ${isLoading ? 'animate-spin text-red-500' : 'text-neutral-400'}`} />
               <span className="hidden sm:inline">Yenile</span>
             </button>
           )}
 
           <button
             onClick={onOpenCalendarModal}
-            className="px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-700 active:bg-red-800 border border-red-500/30 shadow-lg shadow-red-950/50 hover:shadow-red-900/60 transition-all flex items-center gap-2 transform active:scale-95"
+            className="px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-red-600 hover:bg-red-700 active:bg-red-800 border border-red-500/30 shadow-lg shadow-red-950/50 hover:shadow-red-900/60 transition-all flex items-center gap-1.5 transform active:scale-95"
           >
-            <Calendar className="w-4 h-4" />
-            <span>Takvime Ekle</span>
+            <Calendar className="w-3.5 h-3.5" />
+            <span className="hidden sm:inline">Takvime Ekle</span>
+            <span className="sm:hidden">Takvim</span>
           </button>
         </div>
       </div>
