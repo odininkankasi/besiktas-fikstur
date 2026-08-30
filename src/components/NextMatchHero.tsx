@@ -15,7 +15,7 @@ const HeroLogoView: React.FC<{ badge: TeamBadge; teamName: string }> = ({ badge,
 
   if (badge.logoUrl && !imgError) {
     return (
-      <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl bg-neutral-900/90 p-2 sm:p-3 flex items-center justify-center shadow-2xl shadow-black/80 border border-neutral-800/80 group-hover:scale-105 transition-transform duration-300">
+      <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 aspect-square rounded-2xl bg-neutral-900/90 p-2 sm:p-3 flex items-center justify-center shadow-2xl shadow-black/80 border border-neutral-800/80 group-hover:scale-105 transition-transform duration-300">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={badge.logoUrl}
@@ -24,6 +24,7 @@ const HeroLogoView: React.FC<{ badge: TeamBadge; teamName: string }> = ({ badge,
           height={96}
           loading="eager"
           decoding="async"
+          fetchPriority="high"
           onError={() => setImgError(true)}
           className="w-full h-full object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
         />

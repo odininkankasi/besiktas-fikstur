@@ -1,15 +1,23 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/Header';
 import { NextMatchHero } from '@/components/NextMatchHero';
 import { SeasonStatsBanner } from '@/components/SeasonStatsBanner';
 import { MatchCard } from '@/components/MatchCard';
-import { StandingsModal, StandingsData } from '@/components/StandingsModal';
-import { CalendarModal } from '@/components/CalendarModal';
 import { ScrollToTopButton } from '@/components/ScrollToTopButton';
 import { Match, SeasonStats } from '@/lib/types';
+import { StandingsData } from '@/components/StandingsModal';
 import { Search, Trophy, CheckCircle2, Flame, ChevronRight } from 'lucide-react';
+
+const StandingsModal = dynamic(() => import('@/components/StandingsModal').then((mod) => mod.StandingsModal), {
+  ssr: false,
+});
+
+const CalendarModal = dynamic(() => import('@/components/CalendarModal').then((mod) => mod.CalendarModal), {
+  ssr: false,
+});
 
 interface FixturesViewProps {
   initialFixtures: Match[];
