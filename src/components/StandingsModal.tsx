@@ -118,13 +118,8 @@ export const StandingsModal: React.FC<StandingsModalProps> = ({
                       <td className="py-2.5 px-2 text-center font-mono font-bold text-neutral-400">
                         {row.rank}
                       </td>
-                      <td className="py-2.5 px-2 flex items-center gap-2">
+                      <td className="py-2.5 px-2">
                         <span className="truncate">{row.teamName}</span>
-                        {row.isBjk && (
-                          <span className="text-[9px] px-1.5 py-0.2 rounded bg-red-600 text-white font-bold shrink-0">
-                            BJK
-                          </span>
-                        )}
                       </td>
                       <td className="py-2.5 px-2 text-center font-mono">{row.played}</td>
                       <td className="py-2.5 px-2 text-center font-mono text-emerald-400">{row.won}</td>
