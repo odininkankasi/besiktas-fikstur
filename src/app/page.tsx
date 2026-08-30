@@ -124,8 +124,8 @@ export default function Home() {
           onOpenCalendarModal={() => setIsCalendarModalOpen(true)}
         />
 
-        {/* 2. Sezon İstatistikleri Şeridi (Galibiyet, Goller, Averaj) */}
-        <SeasonStatsBanner stats={stats} />
+        {/* 2. Sezon İstatistikleri Şeridi (Resmi Süper Lig Puan Tablosu Verisi) */}
+        <SeasonStatsBanner superLig={standings['super-lig']} />
 
         {/* 3. Puan Durumu Mini Şeridi */}
         <StandingsMiniBanner
