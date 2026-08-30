@@ -15,84 +15,150 @@ function fetchText(url) {
   });
 }
 
-function parseICS(icsText) {
-  const events = [];
-  const lines = icsText.split(/\r\n|\n|\r/);
-  let currentEvent = null;
+function unfoldICS(icsContent) {
+  return icsContent.replace(/\r\n[ \t]/g, '').replace(/\n[ \t]/g, '');
+}
+
+function parseICS(rawICS) {
+  if (!rawICS) return [];
+
+  const cleanICS = unfoldICS(rawICS);
+  const lines = cleanICS.split(/\r\n|\n|\r/);
+  const matches = [];
+
+  let inEvent = false;
+  let inAlarm = false;
+  let currentEvent = {};
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim();
+
     if (line === 'BEGIN:VEVENT') {
+      inEvent = true;
+      inAlarm = false;
       currentEvent = {};
-    } else if (line === 'END:VEVENT' && currentEvent) {
-      if (currentEvent.summary && currentEvent.dtstart) {
-        events.push(currentEvent);
+      continue;
+    }
+
+    if (line === 'END:VEVENT') {
+      if (inEvent && currentEvent.dtstart && currentEvent.summary) {
+        const match = processEvent(currentEvent, matches.length);
+        if (match) {
+          matches.push(match);
+        }
       }
-      currentEvent = null;
-    } else if (currentEvent) {
-      if (line.startsWith('SUMMARY:')) currentEvent.summary = line.substring(8);
+      inEvent = false;
+      inAlarm = false;
+      continue;
+    }
+
+    if (line === 'BEGIN:VALARM') {
+      inAlarm = true;
+      continue;
+    }
+
+    if (line === 'END:VALARM') {
+      inAlarm = false;
+      continue;
+    }
+
+    if (inEvent && !inAlarm) {
+      if (line.startsWith('UID:')) currentEvent.uid = line.substring(4);
+      else if (line.startsWith('SUMMARY:')) currentEvent.summary = line.substring(8);
       else if (line.startsWith('DTSTART:')) currentEvent.dtstart = line.substring(8);
       else if (line.startsWith('DTEND:')) currentEvent.dtend = line.substring(6);
-      else if (line.startsWith('LOCATION:')) currentEvent.location = line.substring(9);
       else if (line.startsWith('DESCRIPTION:')) currentEvent.description = line.substring(12);
-      else if (line.startsWith('UID:')) currentEvent.uid = line.substring(4);
+      else if (line.startsWith('LOCATION:')) currentEvent.location = line.substring(9);
+      else if (line.startsWith('URL:')) currentEvent.url = line.substring(4);
     }
   }
 
-  return events.map((ev, index) => {
-    const summary = ev.summary || '';
-    const parts = summary.split(' - ');
-    const homeTeam = parts[0]?.trim() || 'Beşiktaş';
-    const awayTeam = parts[1]?.trim() || 'Rakip';
-    const isHome = homeTeam.toLowerCase().includes('beşiktaş') || homeTeam.toLowerCase().includes('besiktas');
+  return matches.sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime());
+}
 
-    let startTime = '';
-    if (ev.dtstart) {
-      const clean = ev.dtstart.replace(/[^0-9T]/g, '');
-      const year = clean.substring(0, 4);
-      const month = clean.substring(4, 6);
-      const day = clean.substring(6, 8);
-      const hour = clean.substring(9, 11) || '00';
-      const min = clean.substring(11, 13) || '00';
-      startTime = `${year}-${month}-${day}T${hour}:${min}:00Z`;
+function processEvent(ev, index) {
+  let rawSummary = (ev.summary || '').replace(/⚽️/g, '').trim();
+
+  // Skoru yakala (Örn: "Beşiktaş - FC Midtjylland (1-0)")
+  let score = undefined;
+  const scoreMatch = rawSummary.match(/\(([0-9]+\s*-\s*[0-9]+)\)/);
+  if (scoreMatch) {
+    score = scoreMatch[1].replace(/\s+/g, '');
+    rawSummary = rawSummary.replace(scoreMatch[0], '').trim();
+  }
+
+  const teamParts = rawSummary.split(/\s*-\s*/);
+  let homeTeam = teamParts[0]?.trim() || 'Beşiktaş';
+  let awayTeam = teamParts[1]?.trim() || 'Rakip Takım';
+
+  homeTeam = homeTeam.replace(/starting in \d+ minutes/gi, '').trim();
+  awayTeam = awayTeam.replace(/starting in \d+ minutes/gi, '').trim();
+
+  const isBjkHome = homeTeam.toLowerCase().includes('beşiktaş') || homeTeam.toLowerCase().includes('besiktas');
+
+  const dtstart = ev.dtstart || '';
+  const cleanDt = dtstart.replace(/[^0-9T]/g, '');
+  if (cleanDt.length < 8) return null;
+
+  const year = cleanDt.substring(0, 4);
+  const month = cleanDt.substring(4, 6);
+  const day = cleanDt.substring(6, 8);
+  const hours = cleanDt.substring(9, 11) || '00';
+  const minutes = cleanDt.substring(11, 13) || '00';
+  const startTime = `${year}-${month}-${day}T${hours}:${minutes}:00Z`;
+
+  const matchTimeMs = new Date(startTime).getTime();
+  const now = Date.now();
+  const isFinished = !!score || matchTimeMs < now - 1000 * 60 * 120;
+
+  let locationRaw = (ev.location || '')
+    .replace(/\\,/g, ',')
+    .replace(/\\n/g, ' ')
+    .replace(/\\;/g, ';')
+    .trim();
+
+  let stadiumName = isBjkHome ? 'Tüpraş Stadyumu' : 'Deplasman';
+  let city = isBjkHome ? 'İstanbul' : 'Deplasman';
+
+  if (locationRaw) {
+    const locParts = locationRaw.split(',').map(s => s.trim()).filter(Boolean);
+    if (locParts.length > 0) {
+      stadiumName = locParts[0];
+      if (locParts.length > 1) {
+        city = locParts[locParts.length - 2] || locParts[locParts.length - 1];
+      }
     }
+  }
 
-    const desc = ev.description || '';
-    let score = '';
-    let isFinished = false;
-    const scoreMatch = desc.match(/Result:\s*([0-9]+\s*-\s*[0-9]+)/i);
-    if (scoreMatch) {
-      score = scoreMatch[1].replace(/\s+/g, '');
-      isFinished = true;
-    } else if (new Date(startTime).getTime() < Date.now() - 1000 * 60 * 120) {
-      isFinished = true;
-    }
+  const desc = (ev.description || '').toLowerCase();
+  const summaryLower = rawSummary.toLowerCase();
+  let competition = 'Trendyol Süper Lig';
+  let competitionCode = 'super-lig';
 
-    let comp = 'Trendyol Süper Lig';
-    let compCode = 'super-lig';
-    const lower = (summary + ' ' + desc).toLowerCase();
-    if (lower.includes('europa') || lower.includes('uefa') || lower.includes('avrupa')) {
-      comp = 'UEFA Avrupa Ligi';
-      compCode = 'europe';
-    } else if (lower.includes('kupa') || lower.includes('cup') || lower.includes('ziraat')) {
-      comp = 'Ziraat Türkiye Kupası';
-      compCode = 'cup';
-    }
+  if (desc.includes('europa') || desc.includes('uefa') || desc.includes('avrupa') || summaryLower.includes('europa') || summaryLower.includes('uefa')) {
+    competition = 'UEFA Avrupa Ligi';
+    competitionCode = 'europe';
+  } else if (desc.includes('turkiye kupasi') || desc.includes('ziraat') || desc.includes('cup') || desc.includes('kupa')) {
+    competition = 'Ziraat Türkiye Kupası';
+    competitionCode = 'cup';
+  } else if (desc.includes('friendly') || desc.includes('hazırlık')) {
+    competition = 'Hazırlık Maçı';
+    competitionCode = 'super-lig';
+  }
 
-    return {
-      id: ev.uid || `match-${index}`,
-      homeTeam,
-      awayTeam,
-      bjkIsHome: isHome,
-      startTime,
-      stadiumName: ev.location || (isHome ? 'Tüpraş Stadyumu' : 'Deplasman'),
-      city: isHome ? 'İstanbul' : 'Deplasman',
-      competition: comp,
-      competitionCode: compCode,
-      score: score || undefined,
-      isFinished
-    };
-  }).sort((a, b) => new Date(a.startTime).getTime() - new Date(b.startTime).getTime());
+  return {
+    id: ev.uid || `match-${index}-${startTime}`,
+    homeTeam,
+    awayTeam,
+    bjkIsHome: isBjkHome,
+    startTime,
+    stadiumName,
+    city,
+    competition,
+    competitionCode,
+    score,
+    isFinished
+  };
 }
 
 async function main() {
@@ -105,20 +171,33 @@ async function main() {
     const rawIcs = await fetchText(FOTMOB_ICS_URL);
     const matches = parseICS(rawIcs);
 
-    let wins = 0, draws = 0, losses = 0, scored = 0, conceded = 0, played = 0;
-    matches.forEach(m => {
+    let totalPlayed = 0;
+    let wins = 0;
+    let draws = 0;
+    let losses = 0;
+    let goalsScored = 0;
+    let goalsConceded = 0;
+    let upcomingCount = 0;
+
+    for (const m of matches) {
       if (m.isFinished && m.score) {
-        played++;
+        totalPlayed++;
         const [h, a] = m.score.split('-').map(Number);
-        const bjkScore = m.bjkIsHome ? h : a;
-        const oppScore = m.bjkIsHome ? a : h;
-        scored += bjkScore || 0;
-        conceded += oppScore || 0;
-        if (bjkScore > oppScore) wins++;
-        else if (bjkScore === oppScore) draws++;
-        else losses++;
+        const bjkGoals = m.bjkIsHome ? h : a;
+        const oppGoals = m.bjkIsHome ? a : h;
+
+        if (!isNaN(bjkGoals) && !isNaN(oppGoals)) {
+          goalsScored += bjkGoals;
+          goalsConceded += oppGoals;
+
+          if (bjkGoals > oppGoals) wins++;
+          else if (bjkGoals === oppGoals) draws++;
+          else losses++;
+        }
+      } else {
+        upcomingCount++;
       }
-    });
+    }
 
     const now = Date.now();
     const upcoming = matches.filter(m => !m.isFinished && new Date(m.startTime).getTime() >= now - 1000 * 60 * 120);
@@ -129,31 +208,29 @@ async function main() {
       webcalUrl: 'webcal://bjk.8080.tr/besiktas-fikstur.ics',
       icsUrl: '/besiktas-fikstur.ics',
       stats: {
-        totalPlayed: played,
+        totalPlayed,
         wins,
         draws,
         losses,
-        goalsScored: scored,
-        goalsConceded: conceded,
-        goalDifference: scored - conceded,
-        upcomingCount: matches.length - played
+        goalsScored,
+        goalsConceded,
+        goalDifference: goalsScored - goalsConceded,
+        upcomingCount
       },
       nextMatch: upcoming[0] || null,
       fixtures: matches,
       matches
     };
 
-    // 1. JSON Fikstür
     fs.writeFileSync(path.join(PUBLIC_DIR, 'bjk-fixtures.json'), JSON.stringify(fixturesPayload, null, 2));
 
-    // 2. Özel ICS Dosyası
     const customizedIcs = rawIcs
       .replace(/X-WR-CALNAME:Beşiktaş/g, 'X-WR-CALNAME:Beşiktaş Fikstürü (bjk.8080.tr)')
       .replace(/X-WR-CALDESC:Beşiktaş fixtures/g, 'X-WR-CALDESC:Beşiktaş JK Canlı Maç Takvimi (bjk.8080.tr)')
       .replace(/PRODID:-\/\/FOTMOB\/\/FOTMOB 1.0\/\/EN/g, 'PRODID:-//Besiktas JK Fikstur//TR');
     fs.writeFileSync(path.join(PUBLIC_DIR, 'besiktas-fikstur.ics'), customizedIcs);
 
-    // 3. Puan Durumu JSON
+    // Puan Durumu
     const standingsPayload = {
       success: true,
       lastUpdated: new Date().toISOString(),
@@ -190,9 +267,9 @@ async function main() {
     };
     fs.writeFileSync(path.join(PUBLIC_DIR, 'bjk-standings.json'), JSON.stringify(standingsPayload, null, 2));
 
-    console.log('✅ Statik dosyalar (bjk-fixtures.json, bjk-standings.json, besiktas-fikstur.ics) başarıyla üretildi.');
+    console.log('✅ Statik dosyalar başarıyla üretildi. Toplam Maç:', matches.length, 'Oynanan:', totalPlayed, 'Galibiyet:', wins, 'Atılan Gol:', goalsScored);
   } catch (err) {
-    console.error('Statik veri üretilirken hata:', err);
+    console.error('Hata:', err);
   }
 }
 

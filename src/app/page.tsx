@@ -142,20 +142,20 @@ export default function Home() {
         />
 
         {/* 3. Filtreleme, Sekmeler ve Arama */}
-        <div className="space-y-3 pt-2">
-          {/* Ana Sekmeler (Gelecek, Oynanan, Tümü) */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-            <div className="p-1 bg-neutral-950/90 rounded-2xl border border-neutral-800/80 flex items-center shadow-lg">
+        <div className="space-y-2.5 pt-1">
+          {/* Ana Sekmeler (Gelecek, Oynanan, Tümü) & Arama Kutusu */}
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5">
+            <div className="p-1 bg-neutral-950/90 rounded-2xl border border-neutral-800/80 flex items-center shadow-lg w-full sm:w-auto">
               <button
                 onClick={() => setActiveTab('upcoming')}
-                className={`flex-1 sm:flex-initial px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-xl text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1 ${
                   activeTab === 'upcoming'
                     ? 'bg-red-600 text-white shadow-md shadow-red-950/50'
                     : 'text-neutral-400 hover:text-white'
                 }`}
               >
                 <Flame className="w-3.5 h-3.5" />
-                <span>Gelecek Maçlar</span>
+                <span>Gelecek</span>
                 {stats && (
                   <span className="ml-1 text-[10px] px-1.5 py-0.2 rounded-full bg-black/40 text-white/90">
                     {stats.upcomingCount}
@@ -165,14 +165,14 @@ export default function Home() {
 
               <button
                 onClick={() => setActiveTab('finished')}
-                className={`flex-1 sm:flex-initial px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-xl text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1 ${
                   activeTab === 'finished'
                     ? 'bg-red-600 text-white shadow-md shadow-red-950/50'
                     : 'text-neutral-400 hover:text-white'
                 }`}
               >
                 <CheckCircle2 className="w-3.5 h-3.5" />
-                <span>Oynanan Maçlar</span>
+                <span>Biten</span>
                 {stats && (
                   <span className="ml-1 text-[10px] px-1.5 py-0.2 rounded-full bg-black/40 text-white/90">
                     {stats.totalPlayed}
@@ -182,13 +182,13 @@ export default function Home() {
 
               <button
                 onClick={() => setActiveTab('all')}
-                className={`flex-1 sm:flex-initial px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`flex-1 sm:flex-initial px-3 sm:px-4 py-2 rounded-xl text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1 ${
                   activeTab === 'all'
                     ? 'bg-red-600 text-white shadow-md shadow-red-950/50'
                     : 'text-neutral-400 hover:text-white'
                 }`}
               >
-                <span>Tüm Sezon</span>
+                <span>Tümü</span>
                 <span className="ml-1 text-[10px] px-1.5 py-0.2 rounded-full bg-black/40 text-white/90">
                   {fixtures.length}
                 </span>
@@ -196,11 +196,11 @@ export default function Home() {
             </div>
 
             {/* Arama Kutusu */}
-            <div className="relative flex-1 sm:max-w-xs">
+            <div className="relative w-full sm:max-w-xs">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-500" />
               <input
                 type="text"
-                placeholder="Rakip takım veya stadyum ara..."
+                placeholder="Takım veya stadyum ara..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-4 py-2 rounded-xl text-xs bg-neutral-950/80 border border-neutral-800 text-white placeholder-neutral-500 focus:outline-none focus:border-red-600 transition-colors shadow-inner"
@@ -209,20 +209,20 @@ export default function Home() {
           </div>
 
           {/* Turnuva Filtre Butonları */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 text-xs no-scrollbar">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 text-xs no-scrollbar">
             <button
               onClick={() => setSelectedCompetition('all')}
-              className={`px-3 py-1.5 rounded-xl font-semibold shrink-0 transition-all ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-xl font-semibold shrink-0 transition-all text-[11px] sm:text-xs ${
                 selectedCompetition === 'all'
                   ? 'bg-neutral-800 text-white border border-neutral-700'
                   : 'bg-neutral-950/60 text-neutral-400 border border-neutral-800/80 hover:text-neutral-200'
               }`}
             >
-              Tüm Turnuvalar ({competitions.all})
+              Tümü ({competitions.all})
             </button>
             <button
               onClick={() => setSelectedCompetition('super-lig')}
-              className={`px-3 py-1.5 rounded-xl font-semibold shrink-0 transition-all flex items-center gap-1.5 ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-xl font-semibold shrink-0 transition-all flex items-center gap-1 text-[11px] sm:text-xs ${
                 selectedCompetition === 'super-lig'
                   ? 'bg-red-600/20 text-red-400 border border-red-500/40'
                   : 'bg-neutral-950/60 text-neutral-400 border border-neutral-800/80 hover:text-neutral-200'
@@ -233,7 +233,7 @@ export default function Home() {
             </button>
             <button
               onClick={() => setSelectedCompetition('europe')}
-              className={`px-3 py-1.5 rounded-xl font-semibold shrink-0 transition-all flex items-center gap-1.5 ${
+              className={`px-2.5 sm:px-3 py-1.5 rounded-xl font-semibold shrink-0 transition-all flex items-center gap-1 text-[11px] sm:text-xs ${
                 selectedCompetition === 'europe'
                   ? 'bg-blue-600/20 text-blue-400 border border-blue-500/40'
                   : 'bg-neutral-950/60 text-neutral-400 border border-neutral-800/80 hover:text-neutral-200'
