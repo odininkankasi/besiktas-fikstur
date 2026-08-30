@@ -1,7 +1,7 @@
 {
   "name": "besiktas-fikstur",
   "version": "1.0.0",
-  "description": "Beşiktaş JK Canlı Maç Takvimi, Fikstür ve Takvim Senkronizasyon Platformu",
+  "description": "Beşiktaş JK Canlı Maç Takvimi, Fikstür ve Puan Tablosu Platformu",
   "homepage": "https://bjk.8080.tr",
   "repository": {
     "type": "git",
@@ -26,7 +26,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node -e \"const fs=require('fs'); try { fs.rmSync('.next/cache', { recursive: true, force: true }); } catch(e){}\"",
+    "build": "next build --webpack && node -e \"const fs=require('fs'); try { fs.rmSync('.next/cache', { recursive: true, force: true }); } catch(e){}\"",
     "start": "next start",
     "lint": "eslint"
   },
