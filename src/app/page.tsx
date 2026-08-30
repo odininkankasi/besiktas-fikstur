@@ -4,22 +4,16 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Header } from '@/components/Header';
 import { NextMatchHero } from '@/components/NextMatchHero';
 import { SeasonStatsBanner } from '@/components/SeasonStatsBanner';
-import { StandingsMiniBanner } from '@/components/StandingsMiniBanner';
 import { MatchCard } from '@/components/MatchCard';
-import { StandingsModal } from '@/components/StandingsModal';
 import { CalendarModal } from '@/components/CalendarModal';
 import { ScrollToTopButton } from '@/components/ScrollToTopButton';
-import { Match, SeasonStats, LeagueStandings } from '@/lib/types';
-import { Search, Trophy, CheckCircle2, Flame, RefreshCw } from 'lucide-react';
+import { Match, SeasonStats } from '@/lib/types';
+import { Search, Trophy, CheckCircle2, Flame } from 'lucide-react';
 
 export default function Home() {
   const [fixtures, setFixtures] = useState<Match[]>([]);
   const [stats, setStats] = useState<SeasonStats | null>(null);
   const [nextMatch, setNextMatch] = useState<Match | null>(null);
-  const [standings, setStandings] = useState<{
-    'super-lig': LeagueStandings | null;
-    'europa-league': LeagueStandings | null;
-  }>({ 'super-lig': null, 'europa-league': null });
 
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -27,19 +21,13 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<'upcoming' | 'finished' | 'all'>('upcoming');
 
   // Modallar
-  const [isStandingsModalOpen, setIsStandingsModalOpen] = useState(false);
-  const [selectedStandingsLeague, setSelectedStandingsLeague] = useState<'super-lig' | 'europa-league'>('super-lig');
   const [isCalendarModalOpen, setIsCalendarModalOpen] = useState(false);
 
   // Verileri Çek
   const loadData = async () => {
     setLoading(true);
     try {
-      // Statik JSON veya API'den eşzamanlı çek
-      const [fixturesRes, standingsRes] = await Promise.all([
-        fetch('/bjk-fixtures.json').catch(() => fetch('/api/fixtures')),
-        fetch('/bjk-standings.json').catch(() => fetch('/api/standings'))
-      ]);
+      const fixturesRes = await fetch('/bjk-fixtures.json').catch(() => fetch('/api/fixtures'));
 
       if (fixturesRes && fixturesRes.ok) {
         const fJson = await fixturesRes.json();
@@ -47,13 +35,6 @@ export default function Home() {
           setFixtures(fJson.fixtures || fJson.matches || []);
           setStats(fJson.stats || null);
           setNextMatch(fJson.nextMatch || null);
-        }
-      }
-
-      if (standingsRes && standingsRes.ok) {
-        const sJson = await standingsRes.json();
-        if (sJson.success && sJson.standings) {
-          setStandings(sJson.standings);
         }
       }
     } catch (error) {
@@ -69,16 +50,18 @@ export default function Home() {
 
   // Filtreleme ve Arama
   const filteredFixtures = useMemo(() => {
-    return fixtures.filter((match) => {
+    return fixtures.filter((match: any) => {
       // Tab filtreleme
       if (activeTab === 'upcoming' && match.isFinished) return false;
       if (activeTab === 'finished' && !match.isFinished) return false;
 
+      const code = match.competitionCode || match.competitionId || 'super-lig';
+
       // Turnuva filtreleme
       if (selectedCompetition !== 'all') {
-        if (selectedCompetition === 'super-lig' && match.competitionCode !== 'super-lig') return false;
-        if (selectedCompetition === 'europe' && match.competitionCode !== 'europe') return false;
-        if (selectedCompetition === 'cup' && match.competitionCode !== 'cup') return false;
+        if (selectedCompetition === 'super-lig' && code !== 'super-lig') return false;
+        if (selectedCompetition === 'europe' && code !== 'europe') return false;
+        if (selectedCompetition === 'cup' && code !== 'cup' && code !== 'turkiye-kupasi') return false;
       }
 
       // Arama filtreleme (Rakip takım, Şehir, Stadyum)
@@ -86,10 +69,11 @@ export default function Home() {
         const q = searchQuery.toLowerCase();
         const opponent = match.bjkIsHome ? match.awayTeam : match.homeTeam;
         const matchesQuery =
-          opponent.toLowerCase().includes(q) ||
-          match.stadiumName.toLowerCase().includes(q) ||
-          match.competition.toLowerCase().includes(q) ||
-          match.city.toLowerCase().includes(q);
+          (opponent && opponent.toLowerCase().includes(q)) ||
+          (match.stadiumName && match.stadiumName.toLowerCase().includes(q)) ||
+          (match.location && match.location.toLowerCase().includes(q)) ||
+          (match.competition && match.competition.toLowerCase().includes(q)) ||
+          (match.city && match.city.toLowerCase().includes(q));
         if (!matchesQuery) return false;
       }
 
@@ -100,10 +84,11 @@ export default function Home() {
   // Turnuva Seçenekleri
   const competitions = useMemo(() => {
     const counts = { all: fixtures.length, 'super-lig': 0, europe: 0, cup: 0 };
-    fixtures.forEach((f) => {
-      if (f.competitionCode === 'super-lig') counts['super-lig']++;
-      else if (f.competitionCode === 'europe') counts['europe']++;
-      else if (f.competitionCode === 'cup') counts['cup']++;
+    fixtures.forEach((f: any) => {
+      const code = f.competitionCode || f.competitionId || 'super-lig';
+      if (code === 'super-lig') counts['super-lig']++;
+      else if (code === 'europe') counts['europe']++;
+      else if (code === 'cup' || code === 'turkiye-kupasi') counts['cup']++;
     });
     return counts;
   }, [fixtures]);
@@ -118,10 +103,14 @@ export default function Home() {
     let conceded = 0;
     let upcoming = 0;
 
-    fixtures.forEach((m) => {
+    fixtures.forEach((m: any) => {
+      const code = m.competitionCode || m.competitionId || 'super-lig';
+
       // Turnuva filtresi
-      if (selectedCompetition !== 'all' && m.competitionCode !== selectedCompetition) {
-        return;
+      if (selectedCompetition !== 'all') {
+        if (selectedCompetition === 'super-lig' && code !== 'super-lig') return;
+        if (selectedCompetition === 'europe' && code !== 'europe') return;
+        if (selectedCompetition === 'cup' && code !== 'cup' && code !== 'turkiye-kupasi') return;
       }
 
       if (m.isFinished && m.score) {
@@ -181,20 +170,6 @@ export default function Home() {
         <SeasonStatsBanner
           stats={activeStats}
           selectedCompetitionTitle={competitionTitle}
-        />
-
-        {/* 3. Puan Durumu Mini Şeridi */}
-        <StandingsMiniBanner
-          superLig={standings['super-lig']}
-          europaLeague={standings['europa-league']}
-          onOpenFullStandings={(leagueId) => {
-            if (leagueId === 'europa-league') {
-              setSelectedStandingsLeague('europa-league');
-            } else {
-              setSelectedStandingsLeague('super-lig');
-            }
-            setIsStandingsModalOpen(true);
-          }}
         />
 
         {/* 3. Filtreleme, Sekmeler ve Arama */}
@@ -326,15 +301,6 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Puan Durumu Modalı */}
-      <StandingsModal
-        isOpen={isStandingsModalOpen}
-        onClose={() => setIsStandingsModalOpen(false)}
-        initialLeague={selectedStandingsLeague}
-        superLig={standings['super-lig']}
-        europaLeague={standings['europa-league']}
-      />
-
       {/* Takvim Senkronizasyon Modalı */}
       <CalendarModal
         isOpen={isCalendarModalOpen}
@@ -346,10 +312,9 @@ export default function Home() {
       {/* Yukarı Çık Yüzen Butonu */}
       <ScrollToTopButton />
 
-      {/* Alt Bilgi (Footer) - Yasal Bildirim, Künye & İletişim Bağlantıları */}
+      {/* Alt Bilgi (Footer) */}
       <footer className="w-full border-t border-neutral-800/80 bg-neutral-950 py-8 mt-14 text-xs text-neutral-400">
         <div className="max-w-5xl mx-auto px-4 space-y-4">
-          {/* Yasal Uyarı Metni */}
           <div className="p-3.5 rounded-xl bg-neutral-900/50 border border-neutral-800/60 text-center text-neutral-400 text-[11px] leading-relaxed">
             &quot;Bu site bağımsız bir taraftar projesidir. Beşiktaş JK ile resmi bir bağı bulunmamaktadır.&quot;
           </div>

@@ -1,17 +1,17 @@
 {
   "success": true,
-  "lastUpdated": "2026-08-30T17:32:17.560Z",
+  "lastUpdated": "2026-08-30T17:55:24.422Z",
   "webcalUrl": "webcal://bjk.8080.tr/besiktas-fikstur.ics",
   "icsUrl": "/besiktas-fikstur.ics",
   "stats": {
-    "totalPlayed": 0,
-    "wins": 0,
+    "totalPlayed": 8,
+    "wins": 6,
     "draws": 0,
-    "losses": 0,
-    "goalsScored": 0,
-    "goalsConceded": 0,
-    "goalDifference": 0,
-    "upcomingCount": 48
+    "losses": 2,
+    "goalsScored": 9,
+    "goalsConceded": 2,
+    "goalDifference": 7,
+    "upcomingCount": 40
   },
   "nextMatch": {
     "id": "5904729-10188@fotmob.com",
@@ -20,8 +20,10 @@
     "bjkIsHome": true,
     "startTime": "2026-08-31T18:30:00.000Z",
     "competition": "Trendyol Süper Lig",
-    "competitionId": "super-lig",
+    "competitionCode": "super-lig",
     "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
+    "stadiumName": "Tüpraş Stadyumu",
+    "city": "İstanbul",
     "isFinished": false
   },
   "fixtures": [
@@ -31,10 +33,13 @@
       "awayTeam": "FC Midtjylland",
       "bjkIsHome": true,
       "startTime": "2026-07-23T18:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
-      "isFinished": false
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
+      "score": "1-0",
+      "isFinished": true
     },
     {
       "id": "5788589-10188@fotmob.com",
@@ -42,10 +47,13 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-07-30T17:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "MCH Arena\\, Kaj Zartows Vej 5\\, Herning\\, DEN",
-      "isFinished": false
+      "stadiumName": "MCH Arena\\, Kaj Zartows Vej 5\\, Herning\\, DEN",
+      "city": "Deplasman",
+      "score": "0-2",
+      "isFinished": true
     },
     {
       "id": "5955030-10188@fotmob.com",
@@ -53,10 +61,13 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-08-06T17:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "FINEP Arena\\, Úprkova 473/1\\, Hradec Králové\\, CZE",
-      "isFinished": false
+      "stadiumName": "FINEP Arena\\, Úprkova 473/1\\, Hradec Králové\\, CZE",
+      "city": "Deplasman",
+      "score": "0-1",
+      "isFinished": true
     },
     {
       "id": "5955031-10188@fotmob.com",
@@ -64,10 +75,13 @@
       "awayTeam": "Hradec Králové",
       "bjkIsHome": true,
       "startTime": "2026-08-13T17:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
-      "isFinished": false
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
+      "score": "1-0",
+      "isFinished": true
     },
     {
       "id": "5904711-10188@fotmob.com",
@@ -76,9 +90,12 @@
       "bjkIsHome": true,
       "startTime": "2026-08-16T18:30:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
-      "isFinished": false
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
+      "score": "1-0",
+      "isFinished": true
     },
     {
       "id": "5987964-10188@fotmob.com",
@@ -86,10 +103,13 @@
       "awayTeam": "FK Kauno Žalgiris",
       "bjkIsHome": true,
       "startTime": "2026-08-20T17:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
-      "isFinished": false
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
+      "score": "3-0",
+      "isFinished": true
     },
     {
       "id": "5904715-10188@fotmob.com",
@@ -98,9 +118,12 @@
       "bjkIsHome": false,
       "startTime": "2026-08-23T18:30:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "GAIN Park Stadium\\, Sarıkadıoğlu Caddesi\\, Oba\\, Obaköy\\, Alanya\\, Antalya\\, TUR",
-      "isFinished": false
+      "stadiumName": "GAIN Park Stadium\\, Sarıkadıoğlu Caddesi\\, Oba\\, Obaköy\\, Alanya\\, Antalya\\, TUR",
+      "city": "Deplasman",
+      "score": "1-0",
+      "isFinished": true
     },
     {
       "id": "5987976-10188@fotmob.com",
@@ -108,10 +131,13 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-08-27T17:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "S. Dariaus ir S. Girėno stadionas\\, Ąžuolyno gatvė\\, Kaunas\\, LTU",
-      "isFinished": false
+      "stadiumName": "S. Dariaus ir S. Girėno stadionas\\, Ąžuolyno gatvė\\, Kaunas\\, LTU",
+      "city": "Deplasman",
+      "score": "1-0",
+      "isFinished": true
     },
     {
       "id": "5904729-10188@fotmob.com",
@@ -120,8 +146,10 @@
       "bjkIsHome": true,
       "startTime": "2026-08-31T18:30:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -131,8 +159,10 @@
       "bjkIsHome": false,
       "startTime": "2026-09-06T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Chobani Stadyumu Fenerbahce Sukru Saracoglu Spor Kompleksi",
+      "stadiumName": "Chobani Stadyumu Fenerbahce Sukru Saracoglu Spor Kompleksi",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -142,8 +172,10 @@
       "bjkIsHome": true,
       "startTime": "2026-09-13T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -152,9 +184,11 @@
       "awayTeam": "Marseille",
       "bjkIsHome": true,
       "startTime": "2026-09-17T19:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -164,8 +198,10 @@
       "bjkIsHome": false,
       "startTime": "2026-09-20T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Seyrantepe Diski Stadyumu",
+      "stadiumName": "Seyrantepe Diski Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -175,8 +211,10 @@
       "bjkIsHome": true,
       "startTime": "2026-10-11T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -185,9 +223,11 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-10-15T19:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "SNP Arena",
+      "stadiumName": "SNP Arena",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -197,8 +237,10 @@
       "bjkIsHome": false,
       "startTime": "2026-10-18T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Papara Park",
+      "stadiumName": "Papara Park",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -207,9 +249,11 @@
       "awayTeam": "Crystal Palace",
       "bjkIsHome": true,
       "startTime": "2026-10-22T19:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -219,8 +263,10 @@
       "bjkIsHome": true,
       "startTime": "2026-10-25T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -230,8 +276,10 @@
       "bjkIsHome": false,
       "startTime": "2026-11-01T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Recep Tayyip Erdogan Stadi",
+      "stadiumName": "Recep Tayyip Erdogan Stadi",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -240,9 +288,11 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-11-05T20:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Celtic Park",
+      "stadiumName": "Celtic Park",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -252,8 +302,10 @@
       "bjkIsHome": true,
       "startTime": "2026-11-08T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -263,8 +315,10 @@
       "bjkIsHome": false,
       "startTime": "2026-11-22T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Konya Buyuksehir Stadyumu",
+      "stadiumName": "Konya Buyuksehir Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -273,9 +327,11 @@
       "awayTeam": "Hapoel Beer Sheva",
       "bjkIsHome": true,
       "startTime": "2026-11-26T17:45:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -285,8 +341,10 @@
       "bjkIsHome": true,
       "startTime": "2026-11-29T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -296,8 +354,10 @@
       "bjkIsHome": true,
       "startTime": "2026-12-06T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -306,9 +366,11 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-12-10T20:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "BayArena",
+      "stadiumName": "BayArena",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -318,8 +380,10 @@
       "bjkIsHome": false,
       "startTime": "2026-12-13T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Gaziantep Stadyumu",
+      "stadiumName": "Gaziantep Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -329,8 +393,10 @@
       "bjkIsHome": true,
       "startTime": "2026-12-20T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -340,8 +406,10 @@
       "bjkIsHome": false,
       "startTime": "2027-01-17T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Gursel Aksel Stadium",
+      "stadiumName": "Gursel Aksel Stadium",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -350,9 +418,11 @@
       "awayTeam": "Union St.Gilloise",
       "bjkIsHome": true,
       "startTime": "2027-01-21T17:45:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -362,8 +432,10 @@
       "bjkIsHome": false,
       "startTime": "2027-01-24T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Recep Tayyip Erdogan Stadi",
+      "stadiumName": "Recep Tayyip Erdogan Stadi",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -372,9 +444,11 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2027-01-28T20:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Neo GSP Stadium",
+      "stadiumName": "Neo GSP Stadium",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -384,8 +458,10 @@
       "bjkIsHome": true,
       "startTime": "2027-01-31T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -395,8 +471,10 @@
       "bjkIsHome": false,
       "startTime": "2027-02-07T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Turhan Kiliccioglu Stadi",
+      "stadiumName": "Turhan Kiliccioglu Stadi",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -406,8 +484,10 @@
       "bjkIsHome": true,
       "startTime": "2027-02-14T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -417,8 +497,10 @@
       "bjkIsHome": false,
       "startTime": "2027-02-21T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Kazim Karabekir Stadium",
+      "stadiumName": "Kazim Karabekir Stadium",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -428,8 +510,10 @@
       "bjkIsHome": true,
       "startTime": "2027-02-28T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -439,8 +523,10 @@
       "bjkIsHome": false,
       "startTime": "2027-03-07T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Kocaeli Stadium",
+      "stadiumName": "Kocaeli Stadium",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -450,8 +536,10 @@
       "bjkIsHome": true,
       "startTime": "2027-03-14T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -461,8 +549,10 @@
       "bjkIsHome": false,
       "startTime": "2027-03-21T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Basaksehir Fatih Terim Stadyumu",
+      "stadiumName": "Basaksehir Fatih Terim Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -472,8 +562,10 @@
       "bjkIsHome": true,
       "startTime": "2027-04-04T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -483,8 +575,10 @@
       "bjkIsHome": false,
       "startTime": "2027-04-11T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Eryaman Stadyumu",
+      "stadiumName": "Eryaman Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -494,8 +588,10 @@
       "bjkIsHome": true,
       "startTime": "2027-04-18T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -505,8 +601,10 @@
       "bjkIsHome": false,
       "startTime": "2027-04-25T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Rams Global Stadyumu",
+      "stadiumName": "Rams Global Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -516,8 +614,10 @@
       "bjkIsHome": false,
       "startTime": "2027-05-02T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Samsun Yeni 19 Mayis Stadyumu",
+      "stadiumName": "Samsun Yeni 19 Mayis Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -527,8 +627,10 @@
       "bjkIsHome": true,
       "startTime": "2027-05-09T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -538,8 +640,10 @@
       "bjkIsHome": false,
       "startTime": "2027-05-16T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Caykur Didi Stadyumu",
+      "stadiumName": "Caykur Didi Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -549,8 +653,10 @@
       "bjkIsHome": true,
       "startTime": "2027-05-23T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     }
   ],
@@ -561,10 +667,13 @@
       "awayTeam": "FC Midtjylland",
       "bjkIsHome": true,
       "startTime": "2026-07-23T18:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
-      "isFinished": false
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
+      "score": "1-0",
+      "isFinished": true
     },
     {
       "id": "5788589-10188@fotmob.com",
@@ -572,10 +681,13 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-07-30T17:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "MCH Arena\\, Kaj Zartows Vej 5\\, Herning\\, DEN",
-      "isFinished": false
+      "stadiumName": "MCH Arena\\, Kaj Zartows Vej 5\\, Herning\\, DEN",
+      "city": "Deplasman",
+      "score": "0-2",
+      "isFinished": true
     },
     {
       "id": "5955030-10188@fotmob.com",
@@ -583,10 +695,13 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-08-06T17:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "FINEP Arena\\, Úprkova 473/1\\, Hradec Králové\\, CZE",
-      "isFinished": false
+      "stadiumName": "FINEP Arena\\, Úprkova 473/1\\, Hradec Králové\\, CZE",
+      "city": "Deplasman",
+      "score": "0-1",
+      "isFinished": true
     },
     {
       "id": "5955031-10188@fotmob.com",
@@ -594,10 +709,13 @@
       "awayTeam": "Hradec Králové",
       "bjkIsHome": true,
       "startTime": "2026-08-13T17:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
-      "isFinished": false
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
+      "score": "1-0",
+      "isFinished": true
     },
     {
       "id": "5904711-10188@fotmob.com",
@@ -606,9 +724,12 @@
       "bjkIsHome": true,
       "startTime": "2026-08-16T18:30:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
-      "isFinished": false
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
+      "score": "1-0",
+      "isFinished": true
     },
     {
       "id": "5987964-10188@fotmob.com",
@@ -616,10 +737,13 @@
       "awayTeam": "FK Kauno Žalgiris",
       "bjkIsHome": true,
       "startTime": "2026-08-20T17:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
-      "isFinished": false
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
+      "score": "3-0",
+      "isFinished": true
     },
     {
       "id": "5904715-10188@fotmob.com",
@@ -628,9 +752,12 @@
       "bjkIsHome": false,
       "startTime": "2026-08-23T18:30:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "GAIN Park Stadium\\, Sarıkadıoğlu Caddesi\\, Oba\\, Obaköy\\, Alanya\\, Antalya\\, TUR",
-      "isFinished": false
+      "stadiumName": "GAIN Park Stadium\\, Sarıkadıoğlu Caddesi\\, Oba\\, Obaköy\\, Alanya\\, Antalya\\, TUR",
+      "city": "Deplasman",
+      "score": "1-0",
+      "isFinished": true
     },
     {
       "id": "5987976-10188@fotmob.com",
@@ -638,10 +765,13 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-08-27T17:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "S. Dariaus ir S. Girėno stadionas\\, Ąžuolyno gatvė\\, Kaunas\\, LTU",
-      "isFinished": false
+      "stadiumName": "S. Dariaus ir S. Girėno stadionas\\, Ąžuolyno gatvė\\, Kaunas\\, LTU",
+      "city": "Deplasman",
+      "score": "1-0",
+      "isFinished": true
     },
     {
       "id": "5904729-10188@fotmob.com",
@@ -650,8 +780,10 @@
       "bjkIsHome": true,
       "startTime": "2026-08-31T18:30:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -661,8 +793,10 @@
       "bjkIsHome": false,
       "startTime": "2026-09-06T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Chobani Stadyumu Fenerbahce Sukru Saracoglu Spor Kompleksi",
+      "stadiumName": "Chobani Stadyumu Fenerbahce Sukru Saracoglu Spor Kompleksi",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -672,8 +806,10 @@
       "bjkIsHome": true,
       "startTime": "2026-09-13T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -682,9 +818,11 @@
       "awayTeam": "Marseille",
       "bjkIsHome": true,
       "startTime": "2026-09-17T19:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -694,8 +832,10 @@
       "bjkIsHome": false,
       "startTime": "2026-09-20T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Seyrantepe Diski Stadyumu",
+      "stadiumName": "Seyrantepe Diski Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -705,8 +845,10 @@
       "bjkIsHome": true,
       "startTime": "2026-10-11T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -715,9 +857,11 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-10-15T19:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "SNP Arena",
+      "stadiumName": "SNP Arena",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -727,8 +871,10 @@
       "bjkIsHome": false,
       "startTime": "2026-10-18T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Papara Park",
+      "stadiumName": "Papara Park",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -737,9 +883,11 @@
       "awayTeam": "Crystal Palace",
       "bjkIsHome": true,
       "startTime": "2026-10-22T19:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -749,8 +897,10 @@
       "bjkIsHome": true,
       "startTime": "2026-10-25T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -760,8 +910,10 @@
       "bjkIsHome": false,
       "startTime": "2026-11-01T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Recep Tayyip Erdogan Stadi",
+      "stadiumName": "Recep Tayyip Erdogan Stadi",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -770,9 +922,11 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-11-05T20:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Celtic Park",
+      "stadiumName": "Celtic Park",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -782,8 +936,10 @@
       "bjkIsHome": true,
       "startTime": "2026-11-08T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -793,8 +949,10 @@
       "bjkIsHome": false,
       "startTime": "2026-11-22T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Konya Buyuksehir Stadyumu",
+      "stadiumName": "Konya Buyuksehir Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -803,9 +961,11 @@
       "awayTeam": "Hapoel Beer Sheva",
       "bjkIsHome": true,
       "startTime": "2026-11-26T17:45:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -815,8 +975,10 @@
       "bjkIsHome": true,
       "startTime": "2026-11-29T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -826,8 +988,10 @@
       "bjkIsHome": true,
       "startTime": "2026-12-06T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -836,9 +1000,11 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2026-12-10T20:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "BayArena",
+      "stadiumName": "BayArena",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -848,8 +1014,10 @@
       "bjkIsHome": false,
       "startTime": "2026-12-13T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Gaziantep Stadyumu",
+      "stadiumName": "Gaziantep Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -859,8 +1027,10 @@
       "bjkIsHome": true,
       "startTime": "2026-12-20T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -870,8 +1040,10 @@
       "bjkIsHome": false,
       "startTime": "2027-01-17T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Gursel Aksel Stadium",
+      "stadiumName": "Gursel Aksel Stadium",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -880,9 +1052,11 @@
       "awayTeam": "Union St.Gilloise",
       "bjkIsHome": true,
       "startTime": "2027-01-21T17:45:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -892,8 +1066,10 @@
       "bjkIsHome": false,
       "startTime": "2027-01-24T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Recep Tayyip Erdogan Stadi",
+      "stadiumName": "Recep Tayyip Erdogan Stadi",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -902,9 +1078,11 @@
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
       "startTime": "2027-01-28T20:00:00.000Z",
-      "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competition": "UEFA Avrupa Ligi",
+      "competitionCode": "europe",
       "location": "Neo GSP Stadium",
+      "stadiumName": "Neo GSP Stadium",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -914,8 +1092,10 @@
       "bjkIsHome": true,
       "startTime": "2027-01-31T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -925,8 +1105,10 @@
       "bjkIsHome": false,
       "startTime": "2027-02-07T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Turhan Kiliccioglu Stadi",
+      "stadiumName": "Turhan Kiliccioglu Stadi",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -936,8 +1118,10 @@
       "bjkIsHome": true,
       "startTime": "2027-02-14T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -947,8 +1131,10 @@
       "bjkIsHome": false,
       "startTime": "2027-02-21T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Kazim Karabekir Stadium",
+      "stadiumName": "Kazim Karabekir Stadium",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -958,8 +1144,10 @@
       "bjkIsHome": true,
       "startTime": "2027-02-28T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -969,8 +1157,10 @@
       "bjkIsHome": false,
       "startTime": "2027-03-07T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Kocaeli Stadium",
+      "stadiumName": "Kocaeli Stadium",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -980,8 +1170,10 @@
       "bjkIsHome": true,
       "startTime": "2027-03-14T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -991,8 +1183,10 @@
       "bjkIsHome": false,
       "startTime": "2027-03-21T18:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Basaksehir Fatih Terim Stadyumu",
+      "stadiumName": "Basaksehir Fatih Terim Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -1002,8 +1196,10 @@
       "bjkIsHome": true,
       "startTime": "2027-04-04T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -1013,8 +1209,10 @@
       "bjkIsHome": false,
       "startTime": "2027-04-11T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Eryaman Stadyumu",
+      "stadiumName": "Eryaman Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -1024,8 +1222,10 @@
       "bjkIsHome": true,
       "startTime": "2027-04-18T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -1035,8 +1235,10 @@
       "bjkIsHome": false,
       "startTime": "2027-04-25T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Rams Global Stadyumu",
+      "stadiumName": "Rams Global Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -1046,8 +1248,10 @@
       "bjkIsHome": false,
       "startTime": "2027-05-02T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Samsun Yeni 19 Mayis Stadyumu",
+      "stadiumName": "Samsun Yeni 19 Mayis Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -1057,8 +1261,10 @@
       "bjkIsHome": true,
       "startTime": "2027-05-09T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     },
     {
@@ -1068,8 +1274,10 @@
       "bjkIsHome": false,
       "startTime": "2027-05-16T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Caykur Didi Stadyumu",
+      "stadiumName": "Caykur Didi Stadyumu",
+      "city": "Deplasman",
       "isFinished": false
     },
     {
@@ -1079,8 +1287,10 @@
       "bjkIsHome": true,
       "startTime": "2027-05-23T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
-      "competitionId": "super-lig",
+      "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
+      "stadiumName": "Tüpraş Stadyumu",
+      "city": "İstanbul",
       "isFinished": false
     }
   ]

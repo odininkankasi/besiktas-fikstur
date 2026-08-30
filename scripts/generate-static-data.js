@@ -5,19 +5,6 @@ const https = require('https');
 const FOTMOB_ICS_URL = 'https://pub.fotmob.com/prod/pub/api/v2/calendar/team/10188.ics';
 const PUBLIC_DIR = path.join(__dirname, '..', 'public');
 
-// .env.local dosyasından COLLECT_API_KEY oku
-function getCollectApiKey() {
-  try {
-    const envPath = path.join(__dirname, '..', '.env.local');
-    if (fs.existsSync(envPath)) {
-      const content = fs.readFileSync(envPath, 'utf-8');
-      const match = content.match(/COLLECT_API_KEY=([^\r\n]+)/);
-      if (match) return match[1].trim();
-    }
-  } catch (e) {}
-  return process.env.COLLECT_API_KEY || '56ouwZQF50T1dNXJXi4PF8:638xHT2v02u6BmASDlIn48';
-}
-
 function fetchText(url) {
   return new Promise((resolve, reject) => {
     https.get(url, { headers: { 'User-Agent': 'Mozilla/5.0' } }, (res) => {
@@ -25,33 +12,6 @@ function fetchText(url) {
       res.on('data', (chunk) => data += chunk);
       res.on('end', () => resolve(data));
     }).on('error', reject);
-  });
-}
-
-function fetchJsonFromCollectAPI(pathStr, apiKey) {
-  return new Promise((resolve, reject) => {
-    const options = {
-      hostname: 'api.collectapi.com',
-      path: pathStr,
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'authorization': `apikey ${apiKey}`
-      }
-    };
-    const req = https.request(options, (res) => {
-      let data = '';
-      res.on('data', (chunk) => data += chunk);
-      res.on('end', () => {
-        try {
-          resolve(JSON.parse(data));
-        } catch (e) {
-          reject(e);
-        }
-      });
-    });
-    req.on('error', reject);
-    req.end();
   });
 }
 
@@ -82,9 +42,12 @@ function parseICS(rawICS) {
 
     if (line === 'END:VEVENT') {
       if (inEvent && currentEvent.dtstart && currentEvent.summary) {
-        const match = processEvent(currentEvent, matches.length);
-        if (match) {
-          matches.push(match);
+        // "starting in" bildirim hatırlatıcılarını atla
+        if (!currentEvent.summary.toLowerCase().includes('starting in')) {
+          const match = processEvent(currentEvent, matches.length);
+          if (match) {
+            matches.push(match);
+          }
         }
       }
       inEvent = false;
@@ -102,7 +65,7 @@ function parseICS(rawICS) {
       continue;
     }
 
-    if (line === 'IN-EVENT' || inEvent) {
+    if (inEvent && !inAlarm) {
       if (line.startsWith('UID:')) currentEvent.uid = line.substring(4);
       else if (line.startsWith('SUMMARY:')) currentEvent.summary = line.substring(8);
       else if (line.startsWith('DTSTART:')) currentEvent.dtstart = line.substring(8);
@@ -120,7 +83,7 @@ function processEvent(ev, index) {
   let rawSummary = (ev.summary || '').replace(/⚽️/g, '').trim();
 
   let score = undefined;
-  const scoreMatch = rawSummary.match(/\(([0-9]+\s*-\s*[0-9]+)\)/);
+  const scoreMatch = rawSummary.match(/\(\s*([0-9]+\s*-\s*[0-9]+)\s*\)/);
   if (scoreMatch) {
     score = scoreMatch[1].replace(/\s+/g, '');
     rawSummary = rawSummary.replace(scoreMatch[0], '').trim();
@@ -147,25 +110,29 @@ function processEvent(ev, index) {
     const minute = cleanDt.substring(11, 13);
     const second = cleanDt.substring(13, 15);
     startTime = `${year}-${month}-${day}T${hour}:${minute}:${second}.000Z`;
+  } else if (cleanDt.length >= 8) {
+    const year = cleanDt.substring(0, 4);
+    const month = cleanDt.substring(4, 6);
+    const day = cleanDt.substring(6, 8);
+    startTime = `${year}-${month}-${day}T18:00:00.000Z`;
   } else {
     startTime = new Date().toISOString();
   }
 
-  const desc = ev.description || '';
+  const desc = (ev.description || '').toLowerCase();
+  const summaryLower = rawSummary.toLowerCase();
   let competition = 'Trendyol Süper Lig';
-  let competitionId = 'super-lig';
+  let competitionCode = 'super-lig';
 
-  if (desc.toLowerCase().includes('europa') || rawSummary.toLowerCase().includes('europa') || desc.toLowerCase().includes('uefa') || rawSummary.toLowerCase().includes('uefa') || desc.toLowerCase().includes('avrupa') || rawSummary.toLowerCase().includes('avrupa') || desc.toLowerCase().includes('qualification') || desc.toLowerCase().includes('playoff') || desc.toLowerCase().includes('play-off')) {
+  if (desc.includes('europa') || summaryLower.includes('europa') || desc.includes('uefa') || summaryLower.includes('uefa') || desc.includes('avrupa') || summaryLower.includes('avrupa') || desc.includes('qualification') || desc.includes('playoff') || desc.includes('play-off')) {
     competition = 'UEFA Avrupa Ligi';
-    competitionId = 'europe';
-  } else if (desc.toLowerCase().includes('kupa') || rawSummary.toLowerCase().includes('kupa') || desc.toLowerCase().includes('cup')) {
+    competitionCode = 'europe';
+  } else if (desc.includes('kupa') || summaryLower.includes('kupa') || desc.includes('cup')) {
     competition = 'Ziraat Türkiye Kupası';
-    competitionId = 'turkiye-kupasi';
+    competitionCode = 'cup';
   }
 
   const isFinished = !!score;
-  const matchDate = new Date(startTime);
-  const now = new Date();
 
   return {
     id: ev.uid || `bjk-match-${index}`,
@@ -174,15 +141,17 @@ function processEvent(ev, index) {
     bjkIsHome: isBjkHome,
     startTime,
     competition,
-    competitionId,
+    competitionCode,
     location: ev.location || 'Tüpraş Stadyumu',
+    stadiumName: isBjkHome ? 'Tüpraş Stadyumu' : (ev.location || 'Deplasman'),
+    city: isBjkHome ? 'İstanbul' : 'Deplasman',
     score,
     isFinished
   };
 }
 
 async function main() {
-  console.log('🔄 Statik veri dosyaları oluşturuluyor...');
+  console.log('🔄 Statik fikstür veri dosyaları oluşturuluyor...');
 
   try {
     const rawIcs = await fetchText(FOTMOB_ICS_URL);
@@ -247,79 +216,13 @@ async function main() {
       .replace(/PRODID:-\/\/FOTMOB\/\/FOTMOB 1.0\/\/EN/g, 'PRODID:-//Besiktas JK Fikstur//TR');
     fs.writeFileSync(path.join(PUBLIC_DIR, 'besiktas-fikstur.ics'), customizedIcs);
 
-    // 2. Canlı CollectAPI Üzerinden Süper Lig Puan Durumu Çekme
-    console.log('📡 CollectAPI üzerinden canlı Süper Lig puan tablosu çekiliyor...');
-    const apiKey = getCollectApiKey();
-    let superLigRows = [];
-    let bjkRank = 13;
-    let bjkPoints = 3;
-
-    try {
-      const apiRes = await fetchJsonFromCollectAPI('/sport/league?league=super-lig', apiKey);
-      if (Array.isArray(apiRes) && apiRes.length > 0) {
-        superLigRows = apiRes.map((item) => {
-          const rank = Number(item.rank) || 1;
-          const name = item.team || '';
-          const isBjk = name.toLowerCase().includes('beşiktaş') || name.toLowerCase().includes('besiktas');
-
-          return {
-            rank,
-            teamName: name,
-            shortName: name.substring(0, 3).toUpperCase(),
-            played: Number(item.play) || 0,
-            won: Number(item.win) || 0,
-            drawn: Number(item.draw) || 0,
-            lost: Number(item.lose) || 0,
-            goalsFor: Number(item.goalfor) || 0,
-            goalsAgainst: Number(item.goalagainst) || 0,
-            goalDiff: Number(item.goaldistance) || 0,
-            points: Number(item.point) || 0,
-            isBjk,
-            qualification: rank <= 2 ? 'champions-league' : rank <= 4 ? 'europa-league' : rank >= 16 ? 'relegation' : 'none'
-          };
-        });
-
-        const bjkFound = superLigRows.find(r => r.isBjk);
-        if (bjkFound) {
-          bjkRank = bjkFound.rank;
-          bjkPoints = bjkFound.points;
-        }
-        console.log(`✅ Canlı CollectAPI puan tablosu başarıyla alındı! Beşiktaş Sıra: ${bjkRank}, Puan: ${bjkPoints}`);
-      }
-    } catch (err) {
-      console.error('CollectAPI canlı çekim hatası:', err.message);
+    // Eğer bjk-standings.json varsa temizle
+    const standingsPath = path.join(PUBLIC_DIR, 'bjk-standings.json');
+    if (fs.existsSync(standingsPath)) {
+      fs.unlinkSync(standingsPath);
     }
 
-    const standingsPayload = {
-      success: true,
-      lastUpdated: new Date().toISOString(),
-      standings: {
-        'super-lig': {
-          leagueId: 'super-lig',
-          leagueName: 'Trendyol Süper Lig',
-          season: '2026/2027',
-          bjkRank,
-          bjkPoints,
-          rows: superLigRows
-        },
-        'europa-league': {
-          leagueId: 'europa-league',
-          leagueName: 'UEFA Avrupa Ligi (Lig Aşaması)',
-          season: '2026/2027',
-          bjkRank: 1,
-          bjkPoints: 0,
-          rows: [
-            { rank: 1, teamName: 'Beşiktaş', shortName: 'BJK', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDiff: 0, points: 0, isBjk: true, qualification: 'champions-league' },
-            { rank: 2, teamName: 'Tottenham Hotspur', shortName: 'TOT', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDiff: 0, points: 0, isBjk: false, qualification: 'champions-league' },
-            { rank: 3, teamName: 'Manchester United', shortName: 'MUN', played: 0, won: 0, drawn: 0, lost: 0, goalsFor: 0, goalsAgainst: 0, goalDiff: 0, points: 0, isBjk: false, qualification: 'champions-league' }
-          ]
-        }
-      }
-    };
-
-    fs.writeFileSync(path.join(PUBLIC_DIR, 'bjk-standings.json'), JSON.stringify(standingsPayload, null, 2));
-
-    console.log('✅ Tüm statik ve canlı API verileri başarıyla üretildi!');
+    console.log(`✅ Fikstür verileri başarıyla üretildi! Toplam Maç: ${matches.length} (Biten: ${totalPlayed}, Galibiyet: ${wins}, Beraberlik: ${draws}, Mağlubiyet: ${losses}, Atılan Gol: ${goalsScored})`);
   } catch (err) {
     console.error('Hata:', err);
   }

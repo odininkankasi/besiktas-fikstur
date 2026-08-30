@@ -67,9 +67,9 @@ function processEvent(ev: Record<string, string>, index: number): Match | null {
   // 1. Özet ve Skor Ayrıştırma
   let rawSummary = (ev.summary || '').replace(/⚽️/g, '').trim();
 
-  // Skoru yakala (Örn: "Beşiktaş - FC Midtjylland (1-0)")
+  // Skoru yakala (Örn: "Beşiktaş - FC Midtjylland (1-0)" veya " ( 1 - 0 )")
   let score: string | undefined = undefined;
-  const scoreMatch = rawSummary.match(/\(([0-9]+\s*-\s*[0-9]+)\)/);
+  const scoreMatch = rawSummary.match(/\(\s*([0-9]+\s*-\s*[0-9]+)\s*\)/);
   if (scoreMatch) {
     score = scoreMatch[1].replace(/\s+/g, '');
     rawSummary = rawSummary.replace(scoreMatch[0], '').trim();
