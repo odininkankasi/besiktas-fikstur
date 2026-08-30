@@ -236,19 +236,19 @@ export default function Home() {
         <div className="space-y-3 pt-1">
           {/* Ana Sekmeler (Gelecek, Oynanan, Tümü) & Arama Kutusu */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-            <div className="p-1.5 bg-neutral-950/90 rounded-2xl border border-neutral-800/80 flex items-center shadow-lg w-full sm:w-auto">
+            <div className="p-1 sm:p-1.5 bg-neutral-950/90 rounded-2xl border border-neutral-800/80 grid grid-cols-3 sm:flex items-center shadow-lg w-full sm:w-auto gap-1">
               <button
                 onClick={() => setActiveTab('upcoming')}
-                className={`flex-1 sm:flex-initial px-3.5 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`px-2 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1 sm:gap-1.5 whitespace-nowrap min-w-0 ${
                   activeTab === 'upcoming'
                     ? 'bg-red-600 text-white shadow-md shadow-red-950/50'
                     : 'text-neutral-400 hover:text-white'
                 }`}
               >
-                <Flame className="w-4 h-4" />
-                <span>Gelecek</span>
+                <Flame className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                <span className="truncate">Gelecek</span>
                 {stats && (
-                  <span className="ml-1 text-[11px] sm:text-xs px-2 py-0.5 rounded-full bg-black/40 text-white/90 font-mono">
+                  <span className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.2 sm:py-0.5 rounded-full bg-black/40 text-white/90 font-mono shrink-0">
                     {stats.upcomingCount}
                   </span>
                 )}
@@ -256,16 +256,16 @@ export default function Home() {
 
               <button
                 onClick={() => setActiveTab('finished')}
-                className={`flex-1 sm:flex-initial px-3.5 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`px-2 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1 sm:gap-1.5 whitespace-nowrap min-w-0 ${
                   activeTab === 'finished'
                     ? 'bg-red-600 text-white shadow-md shadow-red-950/50'
                     : 'text-neutral-400 hover:text-white'
                 }`}
               >
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Biten</span>
+                <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+                <span className="truncate">Biten</span>
                 {stats && (
-                  <span className="ml-1 text-[11px] sm:text-xs px-2 py-0.5 rounded-full bg-black/40 text-white/90 font-mono">
+                  <span className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.2 sm:py-0.5 rounded-full bg-black/40 text-white/90 font-mono shrink-0">
                     {stats.totalPlayed}
                   </span>
                 )}
@@ -273,14 +273,14 @@ export default function Home() {
 
               <button
                 onClick={() => setActiveTab('all')}
-                className={`flex-1 sm:flex-initial px-3.5 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1.5 ${
+                className={`px-2 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-1 sm:gap-1.5 whitespace-nowrap min-w-0 ${
                   activeTab === 'all'
                     ? 'bg-red-600 text-white shadow-md shadow-red-950/50'
                     : 'text-neutral-400 hover:text-white'
                 }`}
               >
-                <span>Tümü</span>
-                <span className="ml-1 text-[11px] sm:text-xs px-2 py-0.5 rounded-full bg-black/40 text-white/90 font-mono">
+                <span className="truncate">Tümü</span>
+                <span className="text-[10px] sm:text-xs px-1.5 sm:px-2 py-0.2 sm:py-0.5 rounded-full bg-black/40 text-white/90 font-mono shrink-0">
                   {fixtures.length}
                 </span>
               </button>
