@@ -20,17 +20,12 @@ export const SeasonStatsBanner: React.FC<SeasonStatsBannerProps> = ({
 
   return (
     <section className="w-full space-y-2">
-      {/* Şerit Üst Başlığı & Sezon Etiketi */}
-      <div className="flex items-center justify-between px-1 text-xs sm:text-sm">
-        <div className="flex items-center gap-2">
-          <Activity className="w-4 h-4 text-red-500 shrink-0" />
-          <h2 className="text-xs sm:text-sm font-black uppercase tracking-wider text-neutral-200">
-            {selectedCompetitionTitle}
-          </h2>
-        </div>
-        <span className="text-[10px] sm:text-[11px] font-bold text-neutral-400 uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-neutral-900 border border-neutral-800">
-          Canlı Maç Verisi
-        </span>
+      {/* Şerit Üst Başlığı */}
+      <div className="flex items-center gap-2 px-1 text-xs sm:text-sm">
+        <Activity className="w-4 h-4 text-red-500 shrink-0" />
+        <h2 className="text-xs sm:text-sm font-black uppercase tracking-wider text-neutral-200">
+          {selectedCompetitionTitle}
+        </h2>
       </div>
 
       {/* İstatistik Kutucukları */}
