@@ -1,29 +1,29 @@
 {
   "success": true,
-  "lastUpdated": "2026-08-30T22:53:01.476Z",
+  "lastUpdated": "2026-09-01T09:37:00.598Z",
   "webcalUrl": "webcal://bjk.8080.tr/besiktas-fikstur.ics",
   "icsUrl": "/besiktas-fikstur.ics",
   "stats": {
-    "totalPlayed": 8,
-    "wins": 6,
+    "totalPlayed": 9,
+    "wins": 7,
     "draws": 0,
     "losses": 2,
-    "goalsScored": 9,
-    "goalsConceded": 2,
-    "goalDifference": 7,
-    "upcomingCount": 40
+    "goalsScored": 15,
+    "goalsConceded": 4,
+    "goalDifference": 11,
+    "upcomingCount": 39
   },
   "nextMatch": {
-    "id": "5904729-10188@fotmob.com",
-    "homeTeam": "Beşiktaş",
-    "awayTeam": "Çorum FK",
-    "bjkIsHome": true,
-    "startTime": "2026-08-31T18:30:00.000Z",
+    "id": "5904737-10188@fotmob.com",
+    "homeTeam": "Fenerbahçe",
+    "awayTeam": "Beşiktaş",
+    "bjkIsHome": false,
+    "startTime": "2026-09-05T17:00:00.000Z",
     "competition": "Trendyol Süper Lig",
     "competitionCode": "super-lig",
-    "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
-    "stadiumName": "Tüpraş Stadyumu",
-    "city": "İstanbul",
+    "location": "Chobani Stadyumu Fenerbahce Sukru Saracoglu Spor Kompleksi",
+    "stadiumName": "Chobani Stadyumu Fenerbahce Sukru Saracoglu Spor Kompleksi",
+    "city": "Deplasman",
     "isFinished": false
   },
   "fixtures": [
@@ -150,14 +150,15 @@
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
       "stadiumName": "Tüpraş Stadyumu",
       "city": "İstanbul",
-      "isFinished": false
+      "score": "6-2",
+      "isFinished": true
     },
     {
       "id": "5904737-10188@fotmob.com",
       "homeTeam": "Fenerbahçe",
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
-      "startTime": "2026-09-06T17:00:00.000Z",
+      "startTime": "2026-09-05T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
       "competitionCode": "super-lig",
       "location": "Chobani Stadyumu Fenerbahce Sukru Saracoglu Spor Kompleksi",
@@ -186,7 +187,7 @@
       "startTime": "2026-09-17T19:00:00.000Z",
       "competition": "UEFA Avrupa Ligi",
       "competitionCode": "europe",
-      "location": "Tupras Stadyumu",
+      "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
       "stadiumName": "Tüpraş Stadyumu",
       "city": "İstanbul",
       "isFinished": false
@@ -225,8 +226,8 @@
       "startTime": "2026-10-15T19:00:00.000Z",
       "competition": "UEFA Avrupa Ligi",
       "competitionCode": "europe",
-      "location": "SNP Arena",
-      "stadiumName": "SNP Arena",
+      "location": "SNP Arena\\, Dietmar-Hopp-Straße 1\\, Sinsheim\\, GER",
+      "stadiumName": "SNP Arena\\, Dietmar-Hopp-Straße 1\\, Sinsheim\\, GER",
       "city": "Deplasman",
       "isFinished": false
     },
@@ -251,7 +252,7 @@
       "startTime": "2026-10-22T19:00:00.000Z",
       "competition": "UEFA Avrupa Ligi",
       "competitionCode": "europe",
-      "location": "Tupras Stadyumu",
+      "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
       "stadiumName": "Tüpraş Stadyumu",
       "city": "İstanbul",
       "isFinished": false
@@ -784,14 +785,15 @@
       "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
       "stadiumName": "Tüpraş Stadyumu",
       "city": "İstanbul",
-      "isFinished": false
+      "score": "6-2",
+      "isFinished": true
     },
     {
       "id": "5904737-10188@fotmob.com",
       "homeTeam": "Fenerbahçe",
       "awayTeam": "Beşiktaş",
       "bjkIsHome": false,
-      "startTime": "2026-09-06T17:00:00.000Z",
+      "startTime": "2026-09-05T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
       "competitionCode": "super-lig",
       "location": "Chobani Stadyumu Fenerbahce Sukru Saracoglu Spor Kompleksi",
@@ -820,7 +822,7 @@
       "startTime": "2026-09-17T19:00:00.000Z",
       "competition": "UEFA Avrupa Ligi",
       "competitionCode": "europe",
-      "location": "Tupras Stadyumu",
+      "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
       "stadiumName": "Tüpraş Stadyumu",
       "city": "İstanbul",
       "isFinished": false
@@ -859,8 +861,8 @@
       "startTime": "2026-10-15T19:00:00.000Z",
       "competition": "UEFA Avrupa Ligi",
       "competitionCode": "europe",
-      "location": "SNP Arena",
-      "stadiumName": "SNP Arena",
+      "location": "SNP Arena\\, Dietmar-Hopp-Straße 1\\, Sinsheim\\, GER",
+      "stadiumName": "SNP Arena\\, Dietmar-Hopp-Straße 1\\, Sinsheim\\, GER",
       "city": "Deplasman",
       "isFinished": false
     },
@@ -885,7 +887,7 @@
       "startTime": "2026-10-22T19:00:00.000Z",
       "competition": "UEFA Avrupa Ligi",
       "competitionCode": "europe",
-      "location": "Tupras Stadyumu",
+      "location": "Tüpraş Stadyumu\\, Dolmabahçe Gazhane Caddesi\\, Beşiktaş\\, İstanbul\\, TUR",
       "stadiumName": "Tüpraş Stadyumu",
       "city": "İstanbul",
       "isFinished": false

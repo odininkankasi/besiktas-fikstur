@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { Header } from '@/components/Header';
 import { NextMatchHero } from '@/components/NextMatchHero';
@@ -32,10 +32,40 @@ export const FixturesView: React.FC<FixturesViewProps> = ({
   initialNextMatch,
   initialStandings,
 }) => {
-  const [fixtures] = useState<Match[]>(initialFixtures);
-  const [stats] = useState<SeasonStats | null>(initialStats);
-  const [nextMatch] = useState<Match | null>(initialNextMatch);
+  const [fixtures, setFixtures] = useState<Match[]>(initialFixtures);
+  const [stats, setStats] = useState<SeasonStats | null>(initialStats);
+  const [nextMatch, setNextMatch] = useState<Match | null>(initialNextMatch);
   const [standings, setStandings] = useState<StandingsData | null>(initialStandings);
+
+  useEffect(() => {
+    async function refreshLiveData() {
+      try {
+        const [fixRes, standRes] = await Promise.all([
+          fetch(`/bjk-fixtures.json?t=${Date.now()}`),
+          fetch(`/bjk-standings.json?t=${Date.now()}`)
+        ]);
+        if (fixRes.ok) {
+          const fData = await fixRes.json();
+          if (fData && fData.success) {
+            if (fData.fixtures || fData.matches) {
+              setFixtures(fData.fixtures || fData.matches);
+            }
+            if (fData.stats) setStats(fData.stats);
+            if (fData.nextMatch) setNextMatch(fData.nextMatch);
+          }
+        }
+        if (standRes.ok) {
+          const sData = await standRes.json();
+          if (sData && sData.success) {
+            setStandings(sData);
+          }
+        }
+      } catch (e) {
+        // Fallback gracefully
+      }
+    }
+    refreshLiveData();
+  }, []);
 
   const [standingsLoading, setStandingsLoading] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');

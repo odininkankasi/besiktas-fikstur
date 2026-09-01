@@ -1,0 +1,77 @@
+name: 🦅 Beşiktaş Fikstür ve Puan Durumu Otomatik Güncelleme
+
+on:
+  # Her 4 saatte bir ve maç günlerinde düzenli güncelleme
+  schedule:
+    - cron: '12 */4 * * *'
+
+  # GitHub Actions arayüzünden manuel tetikleme
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-update:
+    name: BJK Fikstür & Puan Durumunu Çek & Güncelle
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Repoyu çek
+      - name: 📥 Repoyu Çek
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. Node.js kur
+      - name: 🟢 Node.js Kur (20.x)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. Bağımlılıkları yükle
+      - name: 📦 Bağımlılıkları Yükle
+        run: npm ci
+
+      # 4. Veri çekme scriptini çalıştır
+      - name: 🔍 Fikstür ve Puan Durumunu Güncelle
+        env:
+          COLLECT_API_KEY: ${{ secrets.COLLECT_API_KEY || '56ouwZQF50T1dNXJXi4PF8:638xHT2v02u6BmASDlIn48' }}
+        run: node scripts/generate-static-data.js
+
+      # 5. Değişiklik kontrolü
+      - name: 🔎 Değişiklik Kontrolü
+        id: check_changes
+        run: |
+          if git diff --quiet public/bjk-fixtures.json public/bjk-standings.json public/besiktas-fikstur.ics; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ Veri dosyaları değişmedi — commit atlanıyor."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "✅ Veri dosyaları güncellendi — commit hazırlanıyor."
+            git diff --stat public/bjk-fixtures.json public/bjk-standings.json public/besiktas-fikstur.ics
+          fi
+
+      # 6. Değişiklik varsa commit & push
+      - name: 💾 Değişiklikleri Kaydet & Yayınla
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config user.name "BJK Fikstür Bot"
+          git config user.email "bot@8080.tr"
+          git add public/bjk-fixtures.json public/bjk-standings.json public/besiktas-fikstur.ics
+          git commit -m "🦅 Beşiktaş fikstür ve puan durumu otomatik güncellendi [$(date +'%d.%m.%Y %H:%M') TSİ]"
+          git push
+
+      # 7. Sonuç özeti
+      - name: 📊 İşlem Özeti
+        if: always()
+        run: |
+          echo "## 🦅 BJK Fikstür & Puan Durumu Pipeline Sonucu" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.check_changes.outputs.changed }}" == "true" ]; then
+            echo "✅ **Fikstür ve puan durumu verileri güncellendi ve Cloudflare Pages deploy tetiklendi.**" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️ **Veri değişikliği yok — deploy atlandı.**" >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🕐 Çalışma zamanı: $(date +'%d.%m.%Y %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY

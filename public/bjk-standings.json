@@ -1,9 +1,9 @@
 {
   "success": true,
-  "lastUpdated": "2026-08-30T22:53:02.076Z",
+  "lastUpdated": "2026-09-01T09:37:01.766Z",
   "leagueName": "Trendyol Süper Lig",
-  "bjkRank": 13,
-  "bjkPoints": 3,
+  "bjkRank": 3,
+  "bjkPoints": 6,
   "rows": [
     {
       "rank": 1,
@@ -37,6 +37,21 @@
     },
     {
       "rank": 3,
+      "teamName": "Beşiktaş",
+      "shortName": "BEŞ",
+      "played": 3,
+      "won": 2,
+      "drawn": 0,
+      "lost": 1,
+      "goalsFor": 7,
+      "goalsAgainst": 3,
+      "goalDiff": 4,
+      "points": 6,
+      "isBjk": true,
+      "qualification": "europa-league"
+    },
+    {
+      "rank": 4,
       "teamName": "Fenerbahçe",
       "shortName": "FEN",
       "played": 3,
@@ -51,7 +66,22 @@
       "qualification": "europa-league"
     },
     {
-      "rank": 4,
+      "rank": 5,
+      "teamName": "Amed Sportif Faaliyetler",
+      "shortName": "AME",
+      "played": 3,
+      "won": 2,
+      "drawn": 0,
+      "lost": 1,
+      "goalsFor": 5,
+      "goalsAgainst": 3,
+      "goalDiff": 2,
+      "points": 6,
+      "isBjk": false,
+      "qualification": "none"
+    },
+    {
+      "rank": 6,
       "teamName": "Kocaelispor",
       "shortName": "KOC",
       "played": 3,
@@ -63,10 +93,10 @@
       "goalDiff": 1,
       "points": 6,
       "isBjk": false,
-      "qualification": "europa-league"
+      "qualification": "none"
     },
     {
-      "rank": 5,
+      "rank": 7,
       "teamName": "Çaykur Rizespor",
       "shortName": "ÇAY",
       "played": 3,
@@ -81,7 +111,7 @@
       "qualification": "none"
     },
     {
-      "rank": 6,
+      "rank": 8,
       "teamName": "Kasımpaşa",
       "shortName": "KAS",
       "played": 3,
@@ -96,7 +126,7 @@
       "qualification": "none"
     },
     {
-      "rank": 7,
+      "rank": 9,
       "teamName": "İstanbul Başakşehir",
       "shortName": "İST",
       "played": 3,
@@ -111,22 +141,7 @@
       "qualification": "none"
     },
     {
-      "rank": 8,
-      "teamName": "Trabzonspor",
-      "shortName": "TRA",
-      "played": 2,
-      "won": 1,
-      "drawn": 1,
-      "lost": 0,
-      "goalsFor": 3,
-      "goalsAgainst": 2,
-      "goalDiff": 1,
-      "points": 4,
-      "isBjk": false,
-      "qualification": "none"
-    },
-    {
-      "rank": 9,
+      "rank": 10,
       "teamName": "Samsunspor",
       "shortName": "SAM",
       "played": 3,
@@ -141,7 +156,22 @@
       "qualification": "none"
     },
     {
-      "rank": 10,
+      "rank": 11,
+      "teamName": "Trabzonspor",
+      "shortName": "TRA",
+      "played": 3,
+      "won": 1,
+      "drawn": 1,
+      "lost": 1,
+      "goalsFor": 4,
+      "goalsAgainst": 4,
+      "goalDiff": 0,
+      "points": 4,
+      "isBjk": false,
+      "qualification": "none"
+    },
+    {
+      "rank": 12,
       "teamName": "Corendon Alanyaspor",
       "shortName": "COR",
       "played": 3,
@@ -156,7 +186,7 @@
       "qualification": "none"
     },
     {
-      "rank": 11,
+      "rank": 13,
       "teamName": "Gaziantep FK",
       "shortName": "GAZ",
       "played": 3,
@@ -168,36 +198,6 @@
       "goalDiff": 0,
       "points": 4,
       "isBjk": false,
-      "qualification": "none"
-    },
-    {
-      "rank": 12,
-      "teamName": "Amed Sportif Faaliyetler",
-      "shortName": "AME",
-      "played": 2,
-      "won": 1,
-      "drawn": 0,
-      "lost": 1,
-      "goalsFor": 3,
-      "goalsAgainst": 2,
-      "goalDiff": 1,
-      "points": 3,
-      "isBjk": false,
-      "qualification": "none"
-    },
-    {
-      "rank": 13,
-      "teamName": "Beşiktaş",
-      "shortName": "BEŞ",
-      "played": 2,
-      "won": 1,
-      "drawn": 0,
-      "lost": 1,
-      "goalsFor": 1,
-      "goalsAgainst": 1,
-      "goalDiff": 0,
-      "points": 3,
-      "isBjk": true,
       "qualification": "none"
     },
     {
@@ -217,21 +217,6 @@
     },
     {
       "rank": 15,
-      "teamName": "Çorum FK",
-      "shortName": "ÇOR",
-      "played": 2,
-      "won": 0,
-      "drawn": 1,
-      "lost": 1,
-      "goalsFor": 2,
-      "goalsAgainst": 3,
-      "goalDiff": -1,
-      "points": 1,
-      "isBjk": false,
-      "qualification": "none"
-    },
-    {
-      "rank": 16,
       "teamName": "Göztepe",
       "shortName": "GÖZ",
       "played": 3,
@@ -241,6 +226,21 @@
       "goalsFor": 5,
       "goalsAgainst": 7,
       "goalDiff": -2,
+      "points": 1,
+      "isBjk": false,
+      "qualification": "none"
+    },
+    {
+      "rank": 16,
+      "teamName": "Çorum FK",
+      "shortName": "ÇOR",
+      "played": 3,
+      "won": 0,
+      "drawn": 1,
+      "lost": 2,
+      "goalsFor": 4,
+      "goalsAgainst": 9,
+      "goalDiff": -5,
       "points": 1,
       "isBjk": false,
       "qualification": "relegation"
