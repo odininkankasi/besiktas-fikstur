@@ -1,6 +1,6 @@
 {
   "success": true,
-  "lastUpdated": "2026-09-02T12:44:21.484Z",
+  "lastUpdated": "2026-09-02T19:22:08.222Z",
   "webcalUrl": "webcal://bjk.8080.tr/besiktas-fikstur.ics",
   "icsUrl": "/besiktas-fikstur.ics",
   "stats": {
@@ -171,7 +171,7 @@
       "homeTeam": "Beşiktaş",
       "awayTeam": "Erzurumspor FK",
       "bjkIsHome": true,
-      "startTime": "2026-09-13T17:00:00.000Z",
+      "startTime": "2026-09-11T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
       "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
@@ -200,8 +200,8 @@
       "startTime": "2026-09-20T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
       "competitionCode": "super-lig",
-      "location": "Seyrantepe Diski Stadyumu",
-      "stadiumName": "Seyrantepe Diski Stadyumu",
+      "location": "Diyarbakır Stadyumu\\, Talaytepe Mahallesi\\, Kayapınar\\, Diyarbakır\\, TUR",
+      "stadiumName": "Diyarbakır Stadyumu\\, Talaytepe Mahallesi\\, Kayapınar\\, Diyarbakır\\, TUR",
       "city": "Deplasman",
       "isFinished": false
     },
@@ -806,7 +806,7 @@
       "homeTeam": "Beşiktaş",
       "awayTeam": "Erzurumspor FK",
       "bjkIsHome": true,
-      "startTime": "2026-09-13T17:00:00.000Z",
+      "startTime": "2026-09-11T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
       "competitionCode": "super-lig",
       "location": "Tupras Stadyumu",
@@ -835,8 +835,8 @@
       "startTime": "2026-09-20T17:00:00.000Z",
       "competition": "Trendyol Süper Lig",
       "competitionCode": "super-lig",
-      "location": "Seyrantepe Diski Stadyumu",
-      "stadiumName": "Seyrantepe Diski Stadyumu",
+      "location": "Diyarbakır Stadyumu\\, Talaytepe Mahallesi\\, Kayapınar\\, Diyarbakır\\, TUR",
+      "stadiumName": "Diyarbakır Stadyumu\\, Talaytepe Mahallesi\\, Kayapınar\\, Diyarbakır\\, TUR",
       "city": "Deplasman",
       "isFinished": false
     },
