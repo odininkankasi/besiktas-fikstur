@@ -1,16 +1,16 @@
 {
   "success": true,
-  "lastUpdated": "2026-09-05T18:12:06.198Z",
+  "lastUpdated": "2026-09-05T21:49:27.588Z",
   "webcalUrl": "webcal://bjk.8080.tr/besiktas-fikstur.ics",
   "icsUrl": "/besiktas-fikstur.ics",
   "stats": {
     "totalPlayed": 10,
-    "wins": 7,
-    "draws": 1,
+    "wins": 8,
+    "draws": 0,
     "losses": 2,
-    "goalsScored": 16,
+    "goalsScored": 17,
     "goalsConceded": 5,
-    "goalDifference": 11,
+    "goalDifference": 12,
     "upcomingCount": 38
   },
   "nextMatch": {
@@ -164,7 +164,7 @@
       "location": "Chobani Stadyumu Fenerbahçe Şükrü Saracoğlu Spor Kompleksi\\, Recep Peker Caddesi\\, Kadıköy\\, İstanbul\\, TUR",
       "stadiumName": "Chobani Stadyumu Fenerbahçe Şükrü Saracoğlu Spor Kompleksi\\, Recep Peker Caddesi\\, Kadıköy\\, İstanbul\\, TUR",
       "city": "Deplasman",
-      "score": "1-1",
+      "score": "1-2",
       "isFinished": true
     },
     {
@@ -800,7 +800,7 @@
       "location": "Chobani Stadyumu Fenerbahçe Şükrü Saracoğlu Spor Kompleksi\\, Recep Peker Caddesi\\, Kadıköy\\, İstanbul\\, TUR",
       "stadiumName": "Chobani Stadyumu Fenerbahçe Şükrü Saracoğlu Spor Kompleksi\\, Recep Peker Caddesi\\, Kadıköy\\, İstanbul\\, TUR",
       "city": "Deplasman",
-      "score": "1-1",
+      "score": "1-2",
       "isFinished": true
     },
     {

@@ -81,3 +81,267 @@
 .font-mono-numeric {
   font-variant-numeric: tabular-nums;
 }
+
+/* =============================================
+   PWA INSTALL PROMPT & IOS MODAL STYLES
+   ============================================= */
+.pwa-install-bar {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  max-width: 520px;
+  margin: 0 auto;
+  animation: pwaSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pwaSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pwa-install-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: rgba(19, 21, 30, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.6), 0 0 20px rgba(227, 10, 23, 0.15);
+}
+
+.pwa-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.pwa-app-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.pwa-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.pwa-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pwa-desc {
+  font-size: 0.75rem;
+  color: #a3a3a3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pwa-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.pwa-btn-install {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #e30a17;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.pwa-btn-install:hover {
+  background: #be123c;
+}
+
+.pwa-btn-install:active {
+  transform: scale(0.96);
+}
+
+.pwa-btn-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #737373;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.pwa-btn-close:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* iOS Safari Modal */
+.pwa-ios-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .pwa-ios-modal-overlay {
+    align-items: center;
+  }
+}
+
+.pwa-ios-modal {
+  background: #14161f;
+  color: #f5f5f5;
+  width: 100%;
+  max-width: 440px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.7);
+  animation: pwaModalIn 0.3s ease-out;
+}
+
+@keyframes pwaModalIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.pwa-ios-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.pwa-ios-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pwa-ios-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.pwa-ios-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+.pwa-ios-subtitle {
+  font-size: 0.75rem;
+  color: #a3a3a3;
+  margin: 0;
+}
+
+.pwa-ios-close {
+  background: transparent;
+  border: none;
+  color: #737373;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 8px;
+}
+
+.pwa-ios-close:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pwa-ios-desc {
+  font-size: 0.875rem;
+  color: #d4d4d4;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.pwa-ios-steps {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  line-height: 1.4;
+}
+
+.pwa-step-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #ef4444;
+  vertical-align: middle;
+}
+
+.pwa-ios-confirm-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #e30a17;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.pwa-ios-confirm-btn:hover {
+  background: #be123c;
+}
+
