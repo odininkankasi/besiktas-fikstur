@@ -1,5 +1,5 @@
 // Service Worker for Beşiktaş Fikstür PWA
-const CACHE_NAME = 'besiktas-fikstur-pwa-v1';
+const CACHE_NAME = 'besiktas-fikstur-pwa-v2';
 const OFFLINE_URL = '/offline.html';
 
 const PRECACHE_ASSETS = [
@@ -60,10 +60,12 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
       fetch(event.request)
         .then((networkResponse) => {
-          const clonedResponse = networkResponse.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, clonedResponse);
-          });
+          if (networkResponse && networkResponse.status === 200) {
+            const clonedResponse = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, clonedResponse);
+            });
+          }
           return networkResponse;
         })
         .catch(async () => {
