@@ -1,6 +1,6 @@
 {
   "success": true,
-  "lastUpdated": "2026-09-08T04:26:17.215Z",
+  "lastUpdated": "2026-09-08T12:50:26.938Z",
   "webcalUrl": "webcal://bjk.8080.tr/besiktas-fikstur.ics",
   "icsUrl": "/besiktas-fikstur.ics",
   "stats": {
@@ -292,8 +292,8 @@
       "startTime": "2026-11-05T20:00:00.000Z",
       "competition": "UEFA Avrupa Ligi",
       "competitionCode": "europe",
-      "location": "Celtic Park",
-      "stadiumName": "Celtic Park",
+      "location": "Celtic Park\\, 18 Kerrydale Street\\, Glasgow\\, SCO",
+      "stadiumName": "Celtic Park\\, 18 Kerrydale Street\\, Glasgow\\, SCO",
       "city": "Deplasman",
       "isFinished": false
     },
@@ -928,8 +928,8 @@
       "startTime": "2026-11-05T20:00:00.000Z",
       "competition": "UEFA Avrupa Ligi",
       "competitionCode": "europe",
-      "location": "Celtic Park",
-      "stadiumName": "Celtic Park",
+      "location": "Celtic Park\\, 18 Kerrydale Street\\, Glasgow\\, SCO",
+      "stadiumName": "Celtic Park\\, 18 Kerrydale Street\\, Glasgow\\, SCO",
       "city": "Deplasman",
       "isFinished": false
     },
