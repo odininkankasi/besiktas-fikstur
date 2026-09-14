@@ -1,6 +1,6 @@
 {
   "success": true,
-  "lastUpdated": "2026-09-14T14:58:37.879Z",
+  "lastUpdated": "2026-09-14T20:16:55.845Z",
   "leagueName": "Trendyol Süper Lig",
   "bjkRank": 2,
   "bjkPoints": 12,
@@ -97,6 +97,21 @@
     },
     {
       "rank": 7,
+      "teamName": "Gaziantep FK",
+      "shortName": "GAZ",
+      "played": 5,
+      "won": 2,
+      "drawn": 2,
+      "lost": 1,
+      "goalsFor": 7,
+      "goalsAgainst": 5,
+      "goalDiff": 2,
+      "points": 8,
+      "isBjk": false,
+      "qualification": "none"
+    },
+    {
+      "rank": 8,
       "teamName": "Corendon Alanyaspor",
       "shortName": "COR",
       "played": 5,
@@ -111,7 +126,7 @@
       "qualification": "none"
     },
     {
-      "rank": 8,
+      "rank": 9,
       "teamName": "Trabzonspor",
       "shortName": "TRA",
       "played": 5,
@@ -126,7 +141,7 @@
       "qualification": "none"
     },
     {
-      "rank": 9,
+      "rank": 10,
       "teamName": "Çorum FK",
       "shortName": "ÇOR",
       "played": 5,
@@ -141,22 +156,22 @@
       "qualification": "none"
     },
     {
-      "rank": 10,
-      "teamName": "Gaziantep FK",
-      "shortName": "GAZ",
-      "played": 4,
+      "rank": 11,
+      "teamName": "Fenerbahçe",
+      "shortName": "FEN",
+      "played": 5,
       "won": 2,
       "drawn": 1,
-      "lost": 1,
-      "goalsFor": 7,
-      "goalsAgainst": 5,
+      "lost": 2,
+      "goalsFor": 8,
+      "goalsAgainst": 6,
       "goalDiff": 2,
       "points": 7,
       "isBjk": false,
       "qualification": "none"
     },
     {
-      "rank": 11,
+      "rank": 12,
       "teamName": "Gençlerbirliği",
       "shortName": "GEN",
       "played": 5,
@@ -167,21 +182,6 @@
       "goalsAgainst": 9,
       "goalDiff": -4,
       "points": 7,
-      "isBjk": false,
-      "qualification": "none"
-    },
-    {
-      "rank": 12,
-      "teamName": "Fenerbahçe",
-      "shortName": "FEN",
-      "played": 4,
-      "won": 2,
-      "drawn": 0,
-      "lost": 2,
-      "goalsFor": 8,
-      "goalsAgainst": 6,
-      "goalDiff": 2,
-      "points": 6,
       "isBjk": false,
       "qualification": "none"
     },
