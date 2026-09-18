@@ -1,6 +1,6 @@
 {
   "success": true,
-  "lastUpdated": "2026-09-18T19:00:07.407Z",
+  "lastUpdated": "2026-09-18T22:32:03.942Z",
   "leagueName": "Trendyol Süper Lig",
   "bjkRank": 2,
   "bjkPoints": 12,
@@ -54,14 +54,14 @@
       "rank": 4,
       "teamName": "Kasımpaşa",
       "shortName": "KAS",
-      "played": 5,
+      "played": 6,
       "won": 2,
-      "drawn": 3,
+      "drawn": 4,
       "lost": 0,
       "goalsFor": 7,
       "goalsAgainst": 5,
       "goalDiff": 2,
-      "points": 9,
+      "points": 10,
       "isBjk": false,
       "qualification": "europa-league"
     },
@@ -187,6 +187,21 @@
     },
     {
       "rank": 13,
+      "teamName": "Tümosan Konyaspor",
+      "shortName": "TÜM",
+      "played": 6,
+      "won": 1,
+      "drawn": 1,
+      "lost": 4,
+      "goalsFor": 4,
+      "goalsAgainst": 8,
+      "goalDiff": -4,
+      "points": 4,
+      "isBjk": false,
+      "qualification": "none"
+    },
+    {
+      "rank": 14,
       "teamName": "Samsunspor",
       "shortName": "SAM",
       "played": 5,
@@ -201,7 +216,7 @@
       "qualification": "none"
     },
     {
-      "rank": 14,
+      "rank": 15,
       "teamName": "İstanbul Başakşehir",
       "shortName": "İST",
       "played": 5,
@@ -216,7 +231,7 @@
       "qualification": "none"
     },
     {
-      "rank": 15,
+      "rank": 16,
       "teamName": "Erzurumspor FK",
       "shortName": "ERZ",
       "played": 5,
@@ -227,21 +242,6 @@
       "goalsAgainst": 11,
       "goalDiff": -9,
       "points": 4,
-      "isBjk": false,
-      "qualification": "none"
-    },
-    {
-      "rank": 16,
-      "teamName": "Tümosan Konyaspor",
-      "shortName": "TÜM",
-      "played": 5,
-      "won": 1,
-      "drawn": 0,
-      "lost": 4,
-      "goalsFor": 4,
-      "goalsAgainst": 8,
-      "goalDiff": -4,
-      "points": 3,
       "isBjk": false,
       "qualification": "relegation"
     },
